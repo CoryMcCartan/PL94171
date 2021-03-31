@@ -1,0 +1,34 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files
+
+ <!-- badges: start -->
+  [![R-CMD-check](https://github.com/CoryMcCartan/PL94171/workflows/R-CMD-check/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions)
+  <!-- badges: end -->
+
+The **PL94171** package contains tools to process legacy format summary
+redistricting data files produced by the United States Census Bureau pursuant to
+P.L. 94-171. These files are generally available earlier but are difficult to
+work with as-is.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("CoryMcCartan/PL94171")
+```
