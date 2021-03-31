@@ -1,3 +1,5 @@
+#' @importFrom dplyr %>%
+#' @importFrom stringr str_glue str_match
 #' @keywords internal
 "_PACKAGE"
 

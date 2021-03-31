@@ -10,8 +10,21 @@ Tools to process legacy format summary redistricting data files
     produced by the United States Census Bureau pursuant to P.L. 94-171. These
     files are generally available earlier but are difficult to work with as-is.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/CoryMcCartan/PL94171}
+  \item Report bugs at \url{https://github.com/CoryMcCartan/PL94171/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Cory McCartan \email{cmccartan@g.harvard.edu}
+
+Authors:
+\itemize{
+  \item Christopher T. Kenny \email{christopherkenny@fas.harvard.edu}
+}
 
 }
 \keyword{internal}

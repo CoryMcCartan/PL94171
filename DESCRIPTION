@@ -10,6 +10,16 @@ Description: Tools to process legacy format summary redistricting data files
     produced by the United States Census Bureau pursuant to P.L. 94-171. These
     files are generally available earlier but are difficult to work with as-is.
 Depends: R (>= 4.0.0)
+Imports: 
+    stringr,
+    readr,
+    vroom,
+    dplyr,
+    dtplyr,
+    withr,
+    lifecycle
+Suggests:
+    tigris
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
