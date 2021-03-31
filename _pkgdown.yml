@@ -1,1 +1,4 @@
 url: https://corymccartan.github.io/PL94171
+template:
+  params:
+    bootswatch: flatly
