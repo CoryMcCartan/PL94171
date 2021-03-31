@@ -1,0 +1,17 @@
+Package: PL94171
+Type: Package
+Title: Tabulate P.L. 94-171 Redistricting Data Summary Files
+Version: 0.1.0
+Authors@R: c(
+    person("Cory", "McCartan", email = "cmccartan@g.harvard.edu", role = c("aut", "cre")),
+    person("Christopher T.", "Kenny", email = "christopherkenny@fas.harvard.edu", role = c("aut", "cre")))
+Maintainer: Cory McCartan <cmccartan@g.harvard.edu>
+Description: Tools to process legacy format summary redistricting data files
+    produced by the United States Census Bureau pursuant to P.L. 94-171. These
+    files are generally available earlier but are difficult to work with as-is.
+Depends: R (>= 4.0.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
