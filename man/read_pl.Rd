@@ -7,7 +7,7 @@
 read_pl(file, file_type = NULL, ...)
 }
 \arguments{
-\item{file}{path to a local file.}
+\item{file}{path to a file. Can be a local file or URL, like in \code{\link[vroom:vroom]{vroom::vroom()}}.}
 
 \item{file_type}{the PL file type. One of \code{c("00001", "00002", "00003", "geo")}.
 If not provided, will try to be determined from the file name.}

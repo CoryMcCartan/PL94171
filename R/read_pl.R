@@ -9,7 +9,7 @@
 #' PL files come in one of four types and are pipe-delimited with no header row.
 #' This function speedily reads in the file and assigns the appropriate column names.
 #'
-#' @param file path to a local file.
+#' @param file path to a file. Can be a local file or URL, like in [vroom::vroom()].
 #' @param file_type the PL file type. One of `c("00001", "00002", "00003", "geo")`.
 #'   If not provided, will try to be determined from the file name.
 #' @param ... passed on to [vroom::vroom()]
