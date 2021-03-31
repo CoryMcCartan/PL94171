@@ -2,15 +2,13 @@
 % Please edit documentation in R/read_pl.R
 \name{read_pl}
 \alias{read_pl}
-\title{Read a PL File}
+\title{Read a set of PL Files}
 \usage{
-read_pl(file, file_type = NULL, ...)
+read_pl(path, ...)
 }
 \arguments{
-\item{file}{path to a file. Can be a local file or URL, like in \code{\link[vroom:vroom]{vroom::vroom()}}.}
-
-\item{file_type}{the PL file type. One of \code{c("00001", "00002", "00003", "geo")}.
-If not provided, will try to be determined from the file name.}
+\item{path}{a path to a folder containing PL files. Can also be a URL for a
+ZIP file, which will be downloaded and unzipped.}
 
 \item{...}{passed on to \code{\link[vroom:vroom]{vroom::vroom()}}}
 }
@@ -20,5 +18,6 @@ A \link{tibble} containing the PL file data.
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 PL files come in one of four types and are pipe-delimited with no header row.
-This function speedily reads in the file and assigns the appropriate column names.
+This function speedily reads in the files and assigns the appropriate column
+names and types.
 }

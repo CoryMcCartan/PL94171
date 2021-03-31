@@ -3,26 +3,43 @@
 ################################################################################
 
 
-#' Read a PL File
+#' Read a set of PL Files
 #'
 #' `r lifecycle::badge("experimental")`
 #' PL files come in one of four types and are pipe-delimited with no header row.
-#' This function speedily reads in the file and assigns the appropriate column names.
+#' This function speedily reads in the files and assigns the appropriate column
+#' names and types.
 #'
-#' @param file path to a file. Can be a local file or URL, like in [vroom::vroom()].
-#' @param file_type the PL file type. One of `c("00001", "00002", "00003", "geo")`.
-#'   If not provided, will try to be determined from the file name.
+#' @param path a path to a folder containing PL files. Can also be path or a URL
+#'   for a ZIP file, which will be downloaded and unzipped.
 #' @param ... passed on to [vroom::vroom()]
 #'
 #' @return A [tibble] containing the PL file data.
 #'
 #' @export
-read_pl = function(file, file_type=NULL, ...) {
-    if (is.null(file_type)) {
-        file_type = str_match(basename(file), "\\w\\w(\\d\\d\\d\\d\\d|geo).+\\.pl")[, 2]
+read_pl = function(path, ...) {
+    if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
+        zip_path = withr::local_tempfile(file="pl", fileext=".zip")
+        utils::download.file(path, zip_path)
+        zip_dir = file.path(dirname(zip_path), "PL-unzip")
+        utils::unzip(path, exdir=zip_dir)
+        path = zip_dir
+    } else if (!dir.exists(path)) { # compressed file
+        zip_dir = withr::local_tempdir()
+        utils::unzip(path, exdir=zip_dir)
+        path = zip_dir
     }
-    file_type = match.arg(file_type, c("00001", "00002", "00003", "geo"), several.ok=FALSE)
 
-    vroom::vroom(file, delim="|", col_names=pl_headers[[file_type]],
-                 col_types=pl_spec[[file_type]], ...)
+    files = list.files(path, pattern="\\.pl$", ignore.case=TRUE)
+    out = list()
+    for (fname in files) {
+        file = file.path(path, fname)
+        row1 = suppressMessages(vroom(file, delim="|", col_names=F, n_max=1))
+        file_type = names(which(ncol(row1) == nchar(pl_spec)))
+
+        out[[file_type]] = vroom(file, delim="|", col_names=pl_headers[[file_type]],
+                                 col_types=pl_spec[[file_type]], ...)
+    }
+
+    out
 }

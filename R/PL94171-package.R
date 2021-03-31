@@ -1,5 +1,6 @@
 #' @importFrom dplyr %>%
 #' @importFrom stringr str_glue str_match
+#' @importFrom vroom vroom
 #' @keywords internal
 "_PACKAGE"
 
