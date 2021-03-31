@@ -13,7 +13,7 @@
 #'   If a file exists and `refresh=FALSE`, will read BAF from this file.
 #' @param refresh if `TRUE`, force a re-download of the BAF data.
 #'
-#' @return An [sf] [tibble] containing the blocks.
+#' @return An `sf` [tibble] containing the blocks.
 #'
 #' @examples
 #' \dontrun{
