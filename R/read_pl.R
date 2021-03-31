@@ -14,7 +14,7 @@
 #'   for a ZIP file, which will be downloaded and unzipped.
 #' @param ... passed on to [vroom::vroom()]
 #'
-#' @return A [tibble] containing the PL file data.
+#' @return A list of [tibble]s containing the four PL files.
 #'
 #' @export
 read_pl = function(path, ...) {

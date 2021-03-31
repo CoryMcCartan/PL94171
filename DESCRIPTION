@@ -18,6 +18,7 @@ Imports:
     withr,
     lifecycle
 Suggests:
+    sf,
     tigris
 License: MIT + file LICENSE
 Encoding: UTF-8

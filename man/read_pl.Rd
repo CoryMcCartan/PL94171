@@ -7,13 +7,13 @@
 read_pl(path, ...)
 }
 \arguments{
-\item{path}{a path to a folder containing PL files. Can also be a URL for a
-ZIP file, which will be downloaded and unzipped.}
+\item{path}{a path to a folder containing PL files. Can also be path or a URL
+for a ZIP file, which will be downloaded and unzipped.}
 
 \item{...}{passed on to \code{\link[vroom:vroom]{vroom::vroom()}}}
 }
 \value{
-A \link{tibble} containing the PL file data.
+A list of \link{tibble}s containing the four PL files.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
