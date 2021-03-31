@@ -12,7 +12,6 @@ Description: Tools to process legacy format summary redistricting data files
 Depends: R (>= 4.0.0)
 Imports: 
     stringr,
-    readr,
     vroom,
     dplyr,
     dtplyr,

@@ -15,7 +15,7 @@ If not provided, will try to be determined from the file name.}
 \item{...}{passed on to \code{\link[vroom:vroom]{vroom::vroom()}}}
 }
 \value{
-a \link{tibble} containing the PL file data.
+A \link{tibble} containing the PL file data.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}

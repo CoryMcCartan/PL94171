@@ -14,7 +14,7 @@
 #'   If not provided, will try to be determined from the file name.
 #' @param ... passed on to [vroom::vroom()]
 #'
-#' @return a [tibble] containing the PL file data.
+#' @return A [tibble] containing the PL file data.
 #'
 #' @export
 read_pl = function(file, file_type=NULL, ...) {

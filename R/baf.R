@@ -28,7 +28,7 @@
 #' @export
 get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     if (!is.null(cache_to) && file.exists(cache_to) && !refresh) {
-        return(readr::read_rds(cache_to))
+        return(readRDS(cache_to))
     }
 
     fips = abbr_to_fips[abbr]
@@ -46,8 +46,8 @@ get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     for (fname in files) {
         geogr = str_match(fname, paste0(base_name, "_([A-Z_]+)\\.txt"))[,2]
         if (!is.null(geographies) && !(geogr %in% geographies)) next
-        table = readr::read_delim(file.path(zip_dir, fname), delim="|",
-                                  col_types=readr::cols(.default="c"))
+        table = vroom::vroom(file.path(zip_dir, fname), delim="|",
+                             col_types=vroom::cols(.default="c"))
         # check final column is not all NA
         if (!all(is.na(table[[ncol(table)]]))) {
             out[[geogr]] = table
@@ -55,7 +55,7 @@ get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     }
 
     if (!is.null(cache_to)) {
-        readr::write_rds(out, file=cache_to, compress="gz")
+        saveRDS(out, file=cache_to, compress="gzip")
     }
 
     out
