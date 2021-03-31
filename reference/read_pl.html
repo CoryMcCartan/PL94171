@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read a PL File — read_pl • PL94171</title>
+<title>Read a set of PL Files — read_pl • PL94171</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,11 @@
 
 
 
-<meta property="og:title" content="Read a PL File — read_pl" />
+<meta property="og:title" content="Read a set of PL Files — read_pl" />
 <meta property="og:description" content="
 PL files come in one of four types and are pipe-delimited with no header row.
-This function speedily reads in the file and assigns the appropriate column names." />
+This function speedily reads in the files and assigns the appropriate column
+names and types." />
 
 
 
@@ -110,7 +111,7 @@ This function speedily reads in the file and assigns the appropriate column name
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read a PL File</h1>
+    <h1>Read a set of PL Files</h1>
     <small class="dont-index">Source: <a href='https://github.com/CoryMcCartan/PL94171/blob/master/R/read_pl.R'><code>R/read_pl.R</code></a></small>
     <div class="hidden name"><code>read_pl.Rd</code></div>
     </div>
@@ -118,22 +119,19 @@ This function speedily reads in the file and assigns the appropriate column name
     <div class="ref-description">
     <p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a>
 PL files come in one of four types and are pipe-delimited with no header row.
-This function speedily reads in the file and assigns the appropriate column names.</p>
+This function speedily reads in the files and assigns the appropriate column
+names and types.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read_pl</span><span class='op'>(</span><span class='va'>file</span>, file_type <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>read_pl</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>file</th>
-      <td><p>path to a file. Can be a local file or URL, like in <code><a href='https://vroom.r-lib.org/reference/vroom.html'>vroom::vroom()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>file_type</th>
-      <td><p>the PL file type. One of <code><a href='https://rdrr.io/r/base/c.html'>c("00001", "00002", "00003", "geo")</a></code>.
-If not provided, will try to be determined from the file name.</p></td>
+      <th>path</th>
+      <td><p>a path to a folder containing PL files. Can also be a URL for a
+ZIP file, which will be downloaded and unzipped.</p></td>
     </tr>
     <tr>
       <th>...</th>
