@@ -20,4 +20,5 @@ Data Prototype (Public Law 94-171) Summary File documentation.
 }
 \examples{
 data('sumlev')
+print(sumlev)
 }

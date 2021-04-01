@@ -16,4 +16,5 @@
 #' 
 #' @examples 
 #' data('sumlev')
+#' print(sumlev)
 NULL
