@@ -16,7 +16,8 @@ Imports:
     dplyr,
     dtplyr,
     withr,
-    lifecycle
+    lifecycle,
+    purrr
 Suggests:
     sf,
     tigris
