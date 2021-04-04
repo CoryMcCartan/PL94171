@@ -7,7 +7,7 @@
 select_standard_pl(pl, clean_names = TRUE)
 }
 \arguments{
-\item{pl}{A list of PL tables, as read in by \code{\link{read_pl}}}
+\item{pl}{A list of PL tables, as read in by \code{\link[=read_pl]{read_pl()}}}
 
 \item{clean_names}{whether to clean names}
 }

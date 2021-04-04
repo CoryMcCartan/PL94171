@@ -11,9 +11,10 @@
 #' @param abbr the state abbreviation to get the BAF for
 #' @param cache_to the file name, if any, to cache the results to (as an RDS).
 #'   If a file exists and `refresh=FALSE`, will read BAF from this file.
+#' @param clean_names whether to clean and rename columns
 #' @param refresh if `TRUE`, force a re-download of the BAF data.
 #'
-#' @return An `sf` [tibble] containing the blocks.
+#' @return An `sf` object containing the blocks.
 #'
 #' @examples
 #' \dontrun{
@@ -21,7 +22,7 @@
 #' }
 #'
 #' @export
-get_blocks = function(abbr, cache_to=NULL, refresh=FALSE) {
+get_blocks = function(abbr, cache_to=NULL, clean_names=TRUE, refresh=FALSE) {
     if (!requireNamespace("sf", quietly=TRUE))
         stop("Must install `sf` package to use `get_blocks()`.")
 
@@ -46,5 +47,15 @@ get_blocks = function(abbr, cache_to=NULL, refresh=FALSE) {
         saveRDS(shp, file=cache_to, compress="gzip")
     }
 
-    shp
+    if (clean_names) {
+        shp %>%
+            left_join(tigris::fips_codes, by=c("STATEFP20"="state_code",
+                                               "COUNTYFP20"="county_code")) %>%
+            select(GEOID=.data$GEOID20, .data$state, .data$county,
+                   area_land=.data$ALAND20, area_water=.data$AWATER20,
+                   #center_lat=INTPTLAT20, center_lon=INTPTLON20,
+                   .data$geometry)
+    } else {
+        shp
+    }
 }

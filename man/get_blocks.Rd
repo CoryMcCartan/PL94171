@@ -4,7 +4,7 @@
 \alias{get_blocks}
 \title{Download TIGER shapefiles for 2020 Census Blocks}
 \usage{
-get_blocks(abbr, cache_to = NULL, refresh = FALSE)
+get_blocks(abbr, cache_to = NULL, clean_names = TRUE, refresh = FALSE)
 }
 \arguments{
 \item{abbr}{the state abbreviation to get the BAF for}
@@ -12,10 +12,12 @@ get_blocks(abbr, cache_to = NULL, refresh = FALSE)
 \item{cache_to}{the file name, if any, to cache the results to (as an RDS).
 If a file exists and \code{refresh=FALSE}, will read BAF from this file.}
 
+\item{clean_names}{whether to clean and rename columns}
+
 \item{refresh}{if \code{TRUE}, force a re-download of the BAF data.}
 }
 \value{
-An \code{sf} \link{tibble} containing the blocks.
+An \code{sf} object containing the blocks.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}

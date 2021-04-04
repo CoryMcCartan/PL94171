@@ -13,7 +13,7 @@ for a ZIP file, which will be downloaded and unzipped.}
 \item{...}{passed on to \code{\link[vroom:vroom]{vroom::vroom()}}}
 }
 \value{
-A list of \link[dtplyr:lazy_dt]{dtplyr::lazy_dt} tables containing the four PL files.
+A list of data frames containing the four PL files.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}

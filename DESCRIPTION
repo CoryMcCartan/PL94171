@@ -15,12 +15,11 @@ Imports:
     vroom,
     dplyr,
     dtplyr,
+    tigris,
+    sf,
     withr,
     lifecycle,
     purrr
-Suggests:
-    sf,
-    tigris
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -7,7 +7,7 @@
 subset_pl(pl, sumlev = "750")
 }
 \arguments{
-\item{pl}{A list of PL tables, as read in by \code{\link{read_pl}}}
+\item{pl}{A list of PL tables, as read in by \code{\link[=read_pl]{read_pl()}}}
 
 \item{sumlev}{the summary level to filter to. A 3 character SUMLEV code. Default is '750' for blocks.}
 }
@@ -24,5 +24,5 @@ This subsets a pl table to a desired summary level. Typical choices include:
 }
 }
 \details{
-All summary levels are listed in \code{\link{sumlev}}.
+All summary levels are listed in \link{pl_geog_levels}.
 }

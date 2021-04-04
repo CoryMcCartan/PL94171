@@ -2,9 +2,13 @@
 
 export(get_baf)
 export(get_blocks)
+export(make_tidy_shp)
+export(pl_geog_levels)
 export(read_pl)
 export(select_standard_pl)
 export(subset_pl)
+import(dplyr)
+import(dtplyr)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,.data)
 importFrom(dplyr,as_tibble)
