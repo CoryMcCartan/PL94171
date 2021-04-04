@@ -28,10 +28,10 @@ subset_pl <- function(pl, sumlev = "750"){
     if ('summary_level' %in% names(pl)) {
         pl %>%
             filter(.data$summary_level == sumlev) %>%
-            mutate(GEOID = stringr::str_sub(GEOID, 10))
+            mutate(GEOID = stringr::str_sub(.data$GEOID, 10))
     } else {
         pl %>%
             filter(.data$SUMLEV == sumlev) %>%
-            mutate(GEOID = stringr::str_sub(GEOID, 10))
+            mutate(GEOID = stringr::str_sub(.data$GEOID, 10))
     }
 }
