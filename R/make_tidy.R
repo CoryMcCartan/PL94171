@@ -22,7 +22,6 @@ make_tidy_shp = function(abbr, path, ...) {
         filter(...) %>%
         select(-.data$row_id, -.data$summary_level, -.data$county)
     full_join(pl, blocks, by=c("GEOID", "state")) %>%
-        mutate(across(pop:vap_two, ~ coalesce(., 0))) %>%
         relocate(.data$county, .after=.data$state) %>%
         sf::st_as_sf()
 }
