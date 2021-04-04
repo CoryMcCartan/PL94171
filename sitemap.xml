@@ -13,6 +13,12 @@
     <loc>https://corymccartan.github.io/PL94171/reference/get_blocks.html</loc>
   </url>
   <url>
+    <loc>https://corymccartan.github.io/PL94171/reference/make_tidy_shp.html</loc>
+  </url>
+  <url>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_geog_levels.html</loc>
+  </url>
+  <url>
     <loc>https://corymccartan.github.io/PL94171/reference/read_pl.html</loc>
   </url>
   <url>
@@ -20,8 +26,5 @@
   </url>
   <url>
     <loc>https://corymccartan.github.io/PL94171/reference/subset_pl.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/sumlev.html</loc>
   </url>
 </urlset>
