@@ -14,7 +14,7 @@
 #'   for a ZIP file, which will be downloaded and unzipped.
 #' @param ... passed on to [vroom::vroom()]
 #'
-#' @return A list of [tibble]s containing the four PL files.
+#' @return A list of [dtplyr::lazy_dt] tables containing the four PL files.
 #'
 #' @export
 read_pl = function(path, ...) {
@@ -38,7 +38,8 @@ read_pl = function(path, ...) {
         file_type = names(which(ncol(row1) == nchar(pl_spec)))
 
         out[[file_type]] = vroom(file, delim="|", col_names=pl_headers[[file_type]],
-                                 col_types=pl_spec[[file_type]], ...)
+                                 col_types=pl_spec[[file_type]], ...) %>%
+            lazy_dt(key_by=LOGRECNO)
     }
 
     out

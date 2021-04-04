@@ -1,4 +1,5 @@
-#' @importFrom dplyr %>%
+#' @import dtplyr
+#' @import dplyr
 #' @importFrom stringr str_glue str_match
 #' @importFrom vroom vroom
 #' @keywords internal
