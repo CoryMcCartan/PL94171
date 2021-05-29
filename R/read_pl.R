@@ -17,6 +17,9 @@
 #' @return A list of data frames containing the four PL files.
 #'
 #' @export
+#' 
+#' @examples 
+#' pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
 read_pl = function(path, ...) {
     if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
         zip_path = withr::local_tempfile(file="pl", fileext=".zip")

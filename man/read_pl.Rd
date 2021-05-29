@@ -21,3 +21,6 @@ PL files come in one of four types and are pipe-delimited with no header row.
 This function speedily reads in the files and assigns the appropriate column
 names and types.
 }
+\examples{
+pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+}

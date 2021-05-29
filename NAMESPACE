@@ -2,6 +2,7 @@
 
 export(get_baf)
 export(get_blocks)
+export(get_prototype)
 export(make_tidy_shp)
 export(pl_geog_levels)
 export(read_pl)

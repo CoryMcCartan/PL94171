@@ -25,8 +25,9 @@
 #' @export
 #'
 #' @importFrom dplyr rename select .data as_tibble %>%
-#'
-#' @export
+#' @examples 
+#' pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+#' pl <- select_standard_pl(pl)
 select_standard_pl <- function(pl, clean_names = TRUE){
   if (!inherits(pl, 'data.frame')) {
     pl <- widen_pl(pl)
