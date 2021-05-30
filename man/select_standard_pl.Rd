@@ -35,3 +35,7 @@ If clean names, then the variables extracted are as follows:
 
 where \* is \code{pop} or \code{vap}.
 }
+\examples{
+pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+pl <- select_standard_pl(pl)
+}

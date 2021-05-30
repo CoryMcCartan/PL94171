@@ -1,6 +1,6 @@
 
 
-#' Subset ot a Summary Level
+#' Subset to a Summary Level
 #'
 #' This subsets a pl table to a desired summary level. Typical choices include:
 #' * '750': block
@@ -17,7 +17,9 @@
 #' @export
 #'
 #' @importFrom dplyr filter
-#' @export
+#' @examples
+#' pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+#' pl <- subset_pl(pl)
 subset_pl <- function(pl, sumlev = "750"){
     if (!inherits(pl, "data.frame")) {
         pl <- widen_pl(pl)

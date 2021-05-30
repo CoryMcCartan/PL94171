@@ -2,7 +2,7 @@
 % Please edit documentation in R/subset.R
 \name{subset_pl}
 \alias{subset_pl}
-\title{Subset ot a Summary Level}
+\title{Subset to a Summary Level}
 \usage{
 subset_pl(pl, sumlev = "750")
 }
@@ -25,4 +25,8 @@ This subsets a pl table to a desired summary level. Typical choices include:
 }
 \details{
 All summary levels are listed in \link{pl_geog_levels}.
+}
+\examples{
+pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+pl <- subset_pl(pl)
 }
