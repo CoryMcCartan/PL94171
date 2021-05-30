@@ -4,12 +4,15 @@
 \alias{pl_tidy_shp}
 \title{All-in-one Shapefile Function}
 \usage{
-pl_tidy_shp(abbr, path, ...)
+pl_tidy_shp(abbr, path, year = 2020, ...)
 }
 \arguments{
 \item{abbr}{The state to make the shapefile for}
 
 \item{path}{The path to the PL files, as in \code{\link[=pl_read]{pl_read()}}}
+
+\item{year}{The year to download the block geography for. Should match the
+year of the PL files.}
 
 \item{...}{passed on to \code{\link[dplyr:filter]{dplyr::filter()}}; use to subset to a certain county,
 for example.}
@@ -19,5 +22,11 @@ an \code{sf} object with demographic and shapefile information for the
 state.
 }
 \description{
-All-in-one Shapefile Function
+Downloads block geography and merges with the cleaned PL 94-171 file.
+}
+\examples{
+\donttest{
+pl_tidy_shp("RI", system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+}
+
 }

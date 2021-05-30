@@ -28,9 +28,7 @@ redistricting.  The BAFs contain Census tabulation block codes and geographic
 area codes for a specific geographic entity type."
 }
 \examples{
-\dontrun{
 pl_get_baf("RI")
 pl_get_baf("RI", "VTD")
-}
 
 }

@@ -101,7 +101,8 @@ pl_select_standard <- function(pl, clean_names = TRUE){
 #' @noRd
 pl_widen <- function(pl) {
     Reduce(function(x, y) {
-        left_join(x, y, by = c("FILEID", "STUSAB", "CHARITER",
-                               "LOGRECNO", "CIFSN"))
-    }, pl)
+        left_join(x, select(y, -.data$CIFSN),
+                  by = c("FILEID", "STUSAB", "CHARITER", "LOGRECNO"))
+    }, pl) %>%
+        select(-.data$CIFSN)
 }

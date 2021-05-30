@@ -20,10 +20,8 @@
 #' @return A list of [tibble]s, one for each available BAF geography.
 #'
 #' @examples
-#' \dontrun{
 #' pl_get_baf("RI")
 #' pl_get_baf("RI", "VTD")
-#' }
 #'
 #' @export
 pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
@@ -31,7 +29,7 @@ pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
         return(readRDS(cache_to))
     }
 
-    fips = abbr_to_fips[abbr]
+    fips = tigris::fips_codes$state_code[match(abbr, tigris::fips_codes$state)]
     stopifnot(!is.na(fips))
     base_name = str_glue("BlockAssign_ST{fips}_{abbr}")
 
