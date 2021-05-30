@@ -103,5 +103,6 @@ select_standard_pl <- function(pl, clean_names = TRUE){
 #' @importFrom dplyr left_join
 #' @noRd
 widen_pl <- function(pl) {
-    reduce(.x = pl, .f = left_join, by = c('FILEID', 'STUSAB', 'CHARITER', 'LOGRECNO'))
+    reduce(.x = pl, .f = left_join, by = c('FILEID', 'STUSAB', 'CHARITER',
+                                           'LOGRECNO', 'CIFSN'))
 }

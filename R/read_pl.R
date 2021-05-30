@@ -34,11 +34,15 @@ read_pl = function(path, ...) {
     out = list()
     for (fname in files) {
         file = file.path(path, fname)
-        row1 = suppressMessages(vroom(file, delim="|", col_names=F, n_max=1))
+        #row1 = suppressMessages(vroom(file, delim="|", col_names=F, n_max=1))
+        row1 = suppressMessages(readr::read_delim(file, delim="|", col_names=F, n_max=1))
         file_type = names(which(ncol(row1) == nchar(pl_spec)))
 
-        out[[file_type]] = vroom(file, delim="|", col_names=pl_headers[[file_type]],
-                                 col_types=pl_spec[[file_type]], ...)
+        #out[[file_type]] = vroom(file, delim="|", col_names=pl_headers[[file_type]],
+        #                         col_types=pl_spec[[file_type]], ...)
+        out[[file_type]] = readr::read_delim(file, delim="|", col_names=pl_headers[[file_type]],
+                                             col_types=pl_spec[[file_type]], ...)
+        out[[file_type]] = lazy_dt(out[[file_type]], key_by=LOGRECNO)
     }
 
     out
