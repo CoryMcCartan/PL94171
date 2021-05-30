@@ -11,7 +11,7 @@
 #' }
 #'
 #' @export
-pl_geog_levels = tibble(data.frame(
+pl_geog_levels = dplyr::tibble(data.frame(
     SUMLEV = c("040","050","060","067",
                "140","150","155","160","170","172","230","280",
                "281","282","283","285","286","288","500",
@@ -103,3 +103,5 @@ pl_geog_levels = tibble(data.frame(
                            "State-School District (Elementary)/Remainder","State-School District (Secondary)/Remainder",
                            "State-School District (Unified)/Remainder")
 ))
+
+# prepared with `dpasta` packate from sum_level.csv file in data-raw/

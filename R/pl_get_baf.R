@@ -21,12 +21,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_baf("RI")
-#' get_baf("RI", "VTD")
+#' pl_get_baf("RI")
+#' pl_get_baf("RI", "VTD")
 #' }
 #'
 #' @export
-get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
+pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     if (!is.null(cache_to) && file.exists(cache_to) && !refresh) {
         return(readRDS(cache_to))
     }
@@ -46,8 +46,8 @@ get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     for (fname in files) {
         geogr = str_match(fname, paste0(base_name, "_([A-Z_]+)\\.txt"))[,2]
         if (!is.null(geographies) && !(geogr %in% geographies)) next
-        table = vroom(file.path(zip_dir, fname), delim="|",
-                      col_types=vroom::cols(.default="c"))
+        table = readr::read_delim(file.path(zip_dir, fname), delim="|",
+                                  col_types=readr::cols(.default="c"))
         # check final column is not all NA
         if (!all(is.na(table[[ncol(table)]]))) {
             out[[geogr]] = table

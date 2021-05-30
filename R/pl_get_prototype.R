@@ -1,8 +1,11 @@
 #' Download TIGER Prototype shapefiles
 #'
 #' `r lifecycle::badge("experimental")`
-#' Requires `sf` to be installed.
-#' 
+#' These prototype shapefiles correspond to the Rhode Island end-to-end Census
+#' test and the accompanying prototype P.L. 94-171 data. This function is
+#' unlikely to be useful for working with any actual decennial Census data.
+#' The corresponding `tigris` functions should be used instead.
+#'
 #' Current acceptable arguments to geog include:
 #' - `block`: block
 #' - `block_group`: block group
@@ -27,26 +30,23 @@
 #'
 #' @examples
 #' \dontrun{
-#' shp <- get_prototype("block")
+#' shp <- pl_get_prototype("block")
 #' }
 #'
 #' @export
-get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL, 
-                         clean_names=TRUE, refresh=FALSE) {
-  if (!requireNamespace("sf", quietly=TRUE))
-    stop("Must install `sf` package to use `get_prototype()`.")
-  
+pl_get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL,
+                            clean_names=TRUE, refresh=FALSE) {
   if (!is.null(cache_to) && file.exists(cache_to) && !refresh) {
     return(readRDS(cache_to))
   }
-  
+
   match.arg(geog, choices = names(geog_to_folder))
   stopifnot(year %in% year_folder[[geog]] | is.null(year_folder[[geog]]))
-  
+
   if(geog %in% c('congressional_district', 'sld_up', 'sld_low', 'state') & !full_state){
     full_state <- TRUE
   }
-  
+
   off_geog <- geog_to_folder[geog]
   off_geog_l <- stringr::str_to_lower(off_geog)
   full_state <- ifelse(full_state, '44', '44007')
@@ -54,20 +54,20 @@ get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL,
 
   path_name = str_glue("{off_geog}/{year}/tl_2018_{full_state}_{off_geog_l}{year_stem}")
   base_name = str_glue('tl_2018_{full_state}_{off_geog_l}{year_stem}')
-  
+
   zip_url = str_glue("https://www2.census.gov/geo/tiger/TIGER2018PLtest/{path_name}.zip")
   zip_path = withr::local_tempfile(file="baf")
   zip_dir = dirname(zip_path)
   utils::download.file(zip_url, zip_path)
-  
+
   files = utils::unzip(zip_path, list=TRUE)$Name
   utils::unzip(zip_path, exdir=zip_dir)
-  
+
   shp = sf::read_sf(file.path(zip_dir, paste0(base_name, ".shp")))
   if (!is.null(cache_to)) {
     saveRDS(shp, file=cache_to, compress="gzip")
   }
-  
+
   # if (clean_names) {
   #   shp %>%
   #     left_join(tigris::fips_codes, by=c("STATEFP20"="state_code",

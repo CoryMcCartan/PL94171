@@ -5,22 +5,21 @@
 
 #' Read a set of PL Files
 #'
-#' `r lifecycle::badge("experimental")`
 #' PL files come in one of four types and are pipe-delimited with no header row.
 #' This function speedily reads in the files and assigns the appropriate column
 #' names and types.
 #'
 #' @param path a path to a folder containing PL files. Can also be path or a URL
 #'   for a ZIP file, which will be downloaded and unzipped.
-#' @param ... passed on to [vroom::vroom()]
+#' @param ... passed on to [readr::read_delim()]
 #'
 #' @return A list of data frames containing the four PL files.
 #'
 #' @export
-#' 
-#' @examples 
-#' pl <- read_pl(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
-read_pl = function(path, ...) {
+#'
+#' @examples
+#' pl <- pl_read(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+pl_read = function(path, ...) {
     if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
         zip_path = withr::local_tempfile(file="pl", fileext=".zip")
         utils::download.file(path, zip_path)
@@ -37,16 +36,17 @@ read_pl = function(path, ...) {
     out = list()
     for (fname in files) {
         file = file.path(path, fname)
-        #row1 = suppressMessages(vroom(file, delim="|", col_names=F, n_max=1))
         row1 = suppressMessages(readr::read_delim(file, delim="|", col_names=F, n_max=1))
         file_type = names(which(ncol(row1) == nchar(pl_spec)))
 
-        #out[[file_type]] = vroom(file, delim="|", col_names=pl_headers[[file_type]],
-        #                         col_types=pl_spec[[file_type]], ...)
         out[[file_type]] = readr::read_delim(file, delim="|", col_names=pl_headers[[file_type]],
                                              col_types=pl_spec[[file_type]], ...)
-        out[[file_type]] = lazy_dt(out[[file_type]], key_by=LOGRECNO)
     }
 
     out
 }
+
+
+#' @rdname pl_read
+#' @export
+read_pl = pl_read

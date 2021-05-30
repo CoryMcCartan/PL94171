@@ -1,7 +1,7 @@
 #' @import dtplyr
-#' @import dplyr
+#' @importFrom dplyr tibble .data filter mutate select rename
+#' @importFrom dplyr left_join full_join summarize relocate %>%
 #' @importFrom stringr str_glue str_match
-#' @importFrom vroom vroom
 #' @keywords internal
 "_PACKAGE"
 
