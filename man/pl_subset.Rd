@@ -18,7 +18,7 @@ tibble
 This subsets a pl table to a desired summary level. Typical choices include:
 \itemize{
 \item '750': block
-\item '740': block group
+\item '150': block group
 \item '630': voting district
 \item '050': county
 }

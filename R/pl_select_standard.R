@@ -100,6 +100,8 @@ pl_select_standard <- function(pl, clean_names = TRUE){
 #'
 #' @noRd
 pl_widen <- function(pl) {
-    purrr::reduce(.x = pl, .f = left_join, by = c('FILEID', 'STUSAB', 'CHARITER',
-                                                  'LOGRECNO', 'CIFSN'))
+    Reduce(function(x, y) {
+        left_join(x, y, by = c("FILEID", "STUSAB", "CHARITER",
+                               "LOGRECNO", "CIFSN"))
+    }, pl)
 }

@@ -4,7 +4,7 @@
 #'
 #' This subsets a pl table to a desired summary level. Typical choices include:
 #' * '750': block
-#' * '740': block group
+#' * '150': block group
 #' * '630': voting district
 #' * '050': county
 #'
