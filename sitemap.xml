@@ -7,27 +7,24 @@
     <loc>https://corymccartan.github.io/PL94171/reference/PL94171-package.html</loc>
   </url>
   <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/get_baf.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/get_blocks.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/get_prototype.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/make_tidy_shp.html</loc>
-  </url>
-  <url>
     <loc>https://corymccartan.github.io/PL94171/reference/pl_geog_levels.html</loc>
   </url>
   <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/read_pl.html</loc>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_get_baf.html</loc>
   </url>
   <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/select_standard_pl.html</loc>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_get_prototype.html</loc>
   </url>
   <url>
-    <loc>https://corymccartan.github.io/PL94171/reference/subset_pl.html</loc>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_read.html</loc>
+  </url>
+  <url>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_select_standard.html</loc>
+  </url>
+  <url>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_subset.html</loc>
+  </url>
+  <url>
+    <loc>https://corymccartan.github.io/PL94171/reference/pl_tidy_shp.html</loc>
   </url>
 </urlset>

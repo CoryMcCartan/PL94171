@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • PL94171</title>
+<title>Read a set of PL Files — pl_read • PL94171</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Read a set of PL Files — pl_read" />
+<meta property="og:description" content="PL files come in one of four types and are pipe-delimited with no header row.
+This function speedily reads in the files and assigns the appropriate column
+names and types." />
 
 
 
@@ -58,7 +61,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,78 +108,45 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Read a set of PL Files</h1>
+    <small class="dont-index">Source: <a href='https://github.com/CoryMcCartan/PL94171/blob/master/R/pl_read.R'><code>R/pl_read.R</code></a></small>
+    <div class="hidden name"><code>pl_read.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>PL files come in one of four types and are pipe-delimited with no header row.
+This function speedily reads in the files and assigns the appropriate column
+names and types.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>pl_read</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>...</span><span class='op'>)</span>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="pl_geog_levels.html">pl_geog_levels</a></code> </p>
-        </td>
-        <td><p>List of Summary Levels and Official Descriptions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pl_get_baf.html">pl_get_baf()</a></code> </p>
-        </td>
-        <td><p>Download 2020 Block Assignment Files for a State</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pl_get_prototype.html">pl_get_prototype()</a></code> </p>
-        </td>
-        <td><p>Download TIGER Prototype shapefiles</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pl_read.html">pl_read()</a></code> <code><a href="pl_read.html">read_pl()</a></code> </p>
-        </td>
-        <td><p>Read a set of PL Files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pl_select_standard.html">pl_select_standard()</a></code> <code><a href="pl_select_standard.html">pl_select_standard()</a></code> </p>
-        </td>
-        <td><p>Select the Standard Redistricting Columns</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pl_subset.html">pl_subset()</a></code> </p>
-        </td>
-        <td><p>Subset to a Summary Level</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pl_tidy_shp.html">pl_tidy_shp()</a></code> </p>
-        </td>
-        <td><p>All-in-one Shapefile Function</p></td>
-      </tr>
-    </tbody>
+<span class='fu'>read_pl</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>a path to a folder containing PL files. Can also be path or a URL
+for a ZIP file, which will be downloaded and unzipped.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>passed on to <code><a href='https://readr.tidyverse.org/reference/read_delim.html'>readr::read_delim()</a></code></p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A list of data frames containing the four PL files.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>pl</span> <span class='op'>&lt;-</span> <span class='fu'>pl_read</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>'extdata/ri2018_2020Style.pl'</span>, package <span class='op'>=</span> <span class='st'>'PL94171'</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: error 1 in extracting from zip file</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
