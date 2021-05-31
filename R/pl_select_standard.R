@@ -25,7 +25,8 @@
 #' @export
 #'
 #' @examples
-#' pl <- pl_read(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+#' pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+#' pl <- pl_read(pl_ex_path)
 #' pl <- pl_select_standard(pl)
 pl_select_standard <- function(pl, clean_names = TRUE){
     if (!inherits(pl, 'data.frame')) {

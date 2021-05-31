@@ -27,6 +27,7 @@ This subsets a pl table to a desired summary level. Typical choices include:
 All summary levels are listed in \link{pl_geog_levels}.
 }
 \examples{
-pl <- pl_read(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+pl <- pl_read(pl_ex_path)
 pl <- pl_subset(pl)
 }

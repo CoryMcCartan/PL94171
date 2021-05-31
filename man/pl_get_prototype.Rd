@@ -53,7 +53,7 @@ Current acceptable arguments to geog include:
 }
 }
 \examples{
-\dontrun{
+\donttest{
 shp <- pl_get_prototype("block")
 }
 

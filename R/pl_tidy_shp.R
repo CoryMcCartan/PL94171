@@ -18,7 +18,8 @@
 #'
 #' @examples
 #' \donttest{
-#' pl_tidy_shp("RI", system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+#' pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+#' pl_tidy_shp("RI", pl_ex_path)
 #' }
 #'
 #' @export

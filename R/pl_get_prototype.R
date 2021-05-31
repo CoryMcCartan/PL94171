@@ -29,7 +29,7 @@
 #' @return An `sf` object containing the blocks.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' shp <- pl_get_prototype("block")
 #' }
 #'

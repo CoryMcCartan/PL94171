@@ -36,6 +36,7 @@ If \verb{clean names=TRUE}, then the variables extracted are as follows:
 where \* is \code{pop} or \code{vap}.
 }
 \examples{
-pl <- pl_read(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+pl <- pl_read(pl_ex_path)
 pl <- pl_select_standard(pl)
 }

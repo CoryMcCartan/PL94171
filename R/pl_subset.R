@@ -18,7 +18,8 @@
 #'
 #' @importFrom dplyr filter
 #' @examples
-#' pl <- pl_read(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+#' pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+#' pl <- pl_read(pl_ex_path)
 #' pl <- pl_subset(pl)
 pl_subset <- function(pl, sumlev = "750"){
     if (!inherits(pl, "data.frame")) {

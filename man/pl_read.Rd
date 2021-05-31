@@ -24,5 +24,8 @@ This function speedily reads in the files and assigns the appropriate column
 names and types.
 }
 \examples{
-pl <- pl_read(system.file('extdata/ri2018_2020Style.pl', package = 'PL94171'))
+pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+pl <- pl_read(pl_ex_path)
+# or try `pl_read(pl_url("RI", 2010))`
+
 }
