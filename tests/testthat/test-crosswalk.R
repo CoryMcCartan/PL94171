@@ -8,16 +8,16 @@ test_that("crosswalks are formatted correctly", {
 test_that("crosswalks are reaggregated correctly", {
     test_d = expand.grid(row=1:4, col=1:4) %>%
         dplyr::as_tibble() %>%
-        mutate(GEOID_from = case_when(row == 1 ~ "A",
-                                      col == 1 ~ "B",
-                                      row == 2 ~ "C",
-                                      row == 4 ~ "D",
-                                      TRUE ~ str_c(row, col)),
-               GEOID_to = case_when(col == 1 ~ "A",
-                                    row == 1 ~ "B",
-                                    row == 3 ~ "C",
-                                    row == 4 ~ "D",
-                                    TRUE ~ str_c(row, col)),
+        mutate(GEOID_from = case_when(row == 1 ~ "440A",
+                                      col == 1 ~ "440B",
+                                      row == 2 ~ "440C",
+                                      row == 4 ~ "440D",
+                                      TRUE ~ str_c("440", row, col)),
+               GEOID_to = case_when(col == 1 ~ "440A",
+                                    row == 1 ~ "440B",
+                                    row == 3 ~ "440C",
+                                    row == 4 ~ "440D",
+                                    TRUE ~ str_c("440", row, col)),
                pop = row) %>%
         group_by(GEOID_from) %>%
         mutate(area_from = n(),

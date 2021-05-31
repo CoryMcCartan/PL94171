@@ -95,7 +95,7 @@ pl_retally = function(d_from, crosswalk) {
     d_from %>%
         select(-dplyr::any_of(c("area_water", "area_land"))) %>%
         full_join(crosswalk, by="GEOID") %>%
-        filter(str_sub(GEOID_to, 1, 2) == fips) %>%
+        filter(str_sub(.data$GEOID_to, 1, 2) == fips) %>%
         mutate(GEOID=.data$GEOID_to) %>%
         select(-.data$GEOID_to) %>%
         group_by(.data$GEOID) %>%
