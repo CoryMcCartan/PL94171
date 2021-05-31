@@ -36,7 +36,7 @@ pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     zip_url = str_glue("https://www2.census.gov/geo/docs/maps-data/data/baf2020/{base_name}.zip")
     zip_path = withr::local_tempfile(file="baf")
     zip_dir = dirname(zip_path)
-    utils::download.file(zip_url, zip_path)
+    utils::download.file(zip_url, zip_path, quiet=!interactive())
 
     files = utils::unzip(zip_path, list=T)$Name
     utils::unzip(zip_path, exdir=zip_dir)

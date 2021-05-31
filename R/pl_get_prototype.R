@@ -58,7 +58,7 @@ pl_get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL,
   zip_url = str_glue("https://www2.census.gov/geo/tiger/TIGER2018PLtest/{path_name}.zip")
   zip_path = withr::local_tempfile(file="baf")
   zip_dir = dirname(zip_path)
-  utils::download.file(zip_url, zip_path)
+  utils::download.file(zip_url, zip_path, quiet=!interactive())
 
   files = utils::unzip(zip_path, list=TRUE)$Name
   utils::unzip(zip_path, exdir=zip_dir)
