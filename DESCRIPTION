@@ -19,9 +19,13 @@ Imports:
     withr,
     lifecycle,
     purrr
+Suggests: 
+    testthat (>= 3.0.0),
+    httr
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 URL: https://corymccartan.github.io/PL94171, https://github.com/CoryMcCartan/PL94171
 BugReports: https://github.com/CoryMcCartan/PL94171/issues
+Config/testthat/edition: 3

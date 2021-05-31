@@ -93,16 +93,17 @@ pl_url = function(abbr, year=2010) {
     name = tigris::fips_codes$state_name[match(abbr, tigris::fips_codes$state)]
     name = stringr::str_replace_all(name, " ", "_")
     if (year == 2000) {
-        str_glue("https://www2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/",
-                 "{name}/{tolower(abbr)}{c('00001', '00002', 'geo')}.upl.zip")
+        url = str_glue("https://www2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/",
+                       "{name}/{tolower(abbr)}{c('00001', '00002', 'geo')}.upl.zip")
     } else if (year == 2010) {
-        str_glue("https://www2.census.gov/census_2010/redistricting_file--pl_94-171/",
-                 "{name}/{tolower(abbr)}2010.pl.zip")
+        url = str_glue("https://www2.census.gov/census_2010/01-Redistricting_File--PL_94-171/",
+                       "{name}/{tolower(abbr)}2010.pl.zip")
     } else if (year == 2020) {
         warning("2020 P.L. 94-171 files have not been released yet.\n",
              "Download Rhode Island prototype data at\n",
              "<https://www2.census.gov/programs-surveys/decennial/rdo/datasets/2018/ri2018_2020Style.pl.zip>")
-        str_glue("https://www2.census.gov/programs-surveys/decennial/2020/data/",
-                 "01-Redistricting_File--PL_94-171/{name}/{tolower(abbr)}2020.pl.zip")
+        url = str_glue("https://www2.census.gov/programs-surveys/decennial/2020/data/",
+                       "01-Redistricting_File--PL_94-171/{name}/{tolower(abbr)}2020.pl.zip")
     }
+    as.character(url)
 }
