@@ -42,7 +42,8 @@ devtools::install_github("CoryMcCartan/PL94171")
 Just need block-level data for total and voting-age population by race? Then
 `pl_tidy_shp()` is all you need.
 
-``` r
+```{r}
+library(PL94171)
 # put the path to the PL 94-171 files here, or use `pl_url()` to download them
 pl_path = system.file("extdata/ri2018_2020Style.pl", package="PL94171")
 pl_tidy_shp("RI", pl_path)
