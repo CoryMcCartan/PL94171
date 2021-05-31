@@ -8,6 +8,7 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/CoryMcCartan/PL94171/workflows/R-CMD-check/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions)
+
 <!-- badges: end -->
 
 The **PL94171** package contains tools to process legacy format summary
@@ -24,3 +25,17 @@ You can install the development version from
 # install.packages("devtools")
 devtools::install_github("CoryMcCartan/PL94171")
 ```
+
+## Basic Usage
+
+Just need block-level data for total and voting-age population by race?
+Then `pl_tidy_shp()` is all you need.
+
+``` r
+# put the path to the PL 94-171 files here, or use `pl_url()` to download them
+pl_path = system.file("extdata/ri2018_2020Style.pl", package="PL94171")
+pl_tidy_shp("RI", pl_path)
+```
+
+To tabulate at different geographies, or to extract other variables,
+check out the [Getting Started page](articles/PL94171.html).
