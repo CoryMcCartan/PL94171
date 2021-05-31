@@ -144,7 +144,10 @@ for a ZIP file, which will be downloaded and unzipped.</p></td>
     <p>A list of data frames containing the four PL files.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>pl</span> <span class='op'>&lt;-</span> <span class='fu'>pl_read</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>'extdata/ri2018_2020Style.pl'</span>, package <span class='op'>=</span> <span class='st'>'PL94171'</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='va'>pl_ex_path</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>'extdata/ri2018_2020Style.pl'</span>, package <span class='op'>=</span> <span class='st'>'PL94171'</span><span class='op'>)</span>
+<span class='va'>pl</span> <span class='op'>&lt;-</span> <span class='fu'>pl_read</span><span class='op'>(</span><span class='va'>pl_ex_path</span><span class='op'>)</span>
+<span class='co'># or try `pl_read(pl_url("RI", 2010))`</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
