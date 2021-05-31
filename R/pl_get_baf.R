@@ -45,7 +45,8 @@ pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
         geogr = str_match(fname, paste0(base_name, "_([A-Z_]+)\\.txt"))[,2]
         if (!is.null(geographies) && !(geogr %in% geographies)) next
         table = readr::read_delim(file.path(zip_dir, fname), delim="|",
-                                  col_types=readr::cols(.default="c"))
+                                  col_types=readr::cols(.default="c"),
+                                  progress=interactive())
         # check final column is not all NA
         if (!all(is.na(table[[ncol(table)]]))) {
             out[[geogr]] = table

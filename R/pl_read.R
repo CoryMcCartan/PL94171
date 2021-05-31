@@ -60,7 +60,7 @@ pl_read = function(path, ...) {
             out[[file_type]] = readr::read_delim(file, delim=delim,
                                                  col_names=pl_headers[[file_type]][1:ncol(row1)],
                                                  col_types=str_sub(pl_spec[[file_type]], 1, ncol(row1)),
-                                                 ...)
+                                                 progress=interactive(), ...)
         } else { # Legacy geo file
             col_length = nchar(readr::read_lines(file, n_max=1))
             spec = if (col_length == 500) fwf_2010 else fwf_2000
@@ -68,7 +68,8 @@ pl_read = function(path, ...) {
             names(types) = spec$col_names
             types["LOGRECNO"] = "i"
 
-            out$geo = readr::read_fwf(file, spec, col_types=types)
+            out$geo = readr::read_fwf(file, spec, col_types=types,
+                                      progress=interactive())
             out$geo$GEOID = with(out$geo,
                                  case_when(!is.na(BLOCK) ~ str_c("7500000US", STATE, COUNTY, TRACT, BLOCK),
                                            !is.na(BLKGRP) ~ str_c("1500000US", STATE, COUNTY, TRACT, BLKGRP),

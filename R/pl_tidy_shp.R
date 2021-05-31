@@ -24,7 +24,7 @@
 #'
 #' @export
 pl_tidy_shp = function(abbr, path, year=2020, ...) {
-    blocks = tigris::blocks(abbr, year=year) %>%
+    blocks = tigris::blocks(abbr, year=year, progress_bar=interactive()) %>%
         select(GEOID=starts_with("GEOID"),
                state_code=.data$STATEFP,
                county_code=.data$COUNTYFP,
