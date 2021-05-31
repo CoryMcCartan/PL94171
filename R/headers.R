@@ -16,9 +16,6 @@ pl_spec = c(
     "geo" = "ccccccciccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccddcccciiccccc"
 )
 
-pl_headers_legacy = list(
-    geo = c("FILEID", "STUSAB", "SUMLEV", "GEOCOMP", "CHARITER", "CIFSN", "LOGRECNO", "REGION", "DIVISION", "STATECE", "STATE", "COUNTY", "COUNTYSC", "COUSUB", "COUSUBCC", "COUSUBSC", "PLACE", "PLACECC", "PLACEDC", "PLACESC", "TRACT", "BLKGRP", "BLOCK", "IUC", "CONCIT", "CONCITCC", "CONCITSC", "AIANHH", "AIANHHFP", "AIANHHCC", "AIHHTLI", "AITSCE", "AITS", "AITSCC", "ANRC", "ANRCCC", "MSACMSA", "MASC", "CMSA", "MACCI", "PMSA", "NECMA", "NECMACCI", "NECMASC", "EXI", "UA", "UASC", "UATYPE", "UR", "CD106", "CD108", "CD109", "CD110", "SLDU", "SLDL", "VTD", "VTDI", "ZCTA3", "ZCTA5", "SUBMCDCC", "AREALAND", "AREAWATR", "NAME", "FUNCSTAT", "GCUNI", "POP100", "RES", "INTPTLAT", "INTPTLON", "LSADC", "PARTFLAG", "SDELM", "SDSEC", "SDUNI", "TAZ", "UGA", "PUMA5", "PUMA1", "RESERVED")
-)
 pl_spec_legacy = readr::cols("FILEID"="c", "STUSAB"="c", "SUMLEV"="c", "GEOCOMP"="c",
                              "CHARITER"="c", "CIFSN"="c", "LOGRECNO"="i", "REGION"="c",
                              "DIVISION"="c", "STATECE"="c", "STATE"="c", "COUNTY"="c",
@@ -38,4 +35,3 @@ pl_spec_legacy = readr::cols("FILEID"="c", "STUSAB"="c", "SUMLEV"="c", "GEOCOMP"
                              "LSADC"="c", "PARTFLAG"="c", "SDELM"="c", "SDSEC"="c",
                              "SDUNI"="c", "TAZ"="c", "UGA"="c", "PUMA5"="c", "PUMA1"="c",
                              "RESERVED"="c")
-pl_size_legacy = c(6L, 2L, 3L, 2L, 3L, 2L, 7L, 1L, 1L, 2L, 2L, 3L, 2L, 5L, 2L, 2L, 5L, 2L, 1L, 2L, 6L, 1L, 4L, 2L, 5L, 2L, 2L, 4L, 5L, 2L, 1L, 3L, 5L, 2L, 5L, 2L, 4L, 2L, 2L, 1L, 4L, 4L, 1L, 2L, 1L, 5L, 2L, 1L, 1L, 2L, 2L, 2L, 2L, 3L, 3L, 6L, 1L, 3L, 5L, 2L, 14L, 14L, 90L, 1L, 1L, 9L, 9L, 9L, 10L, 2L, 1L, 5L, 5L, 5L, 6L, 5L, 5L, 5L, 32L)

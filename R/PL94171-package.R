@@ -1,6 +1,6 @@
 #' @importFrom dplyr tibble .data filter mutate select rename starts_with
 #' @importFrom dplyr left_join full_join summarize relocate %>%
-#' @importFrom stringr str_glue str_match str_sub
+#' @importFrom stringr str_glue str_match str_sub str_c
 #' @keywords internal
 "_PACKAGE"
 

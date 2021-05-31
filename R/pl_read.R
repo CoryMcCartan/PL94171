@@ -62,8 +62,19 @@ pl_read = function(path, ...) {
                                                  col_types=str_sub(pl_spec[[file_type]], 1, ncol(row1)),
                                                  ...)
         } else { # Legacy geo file
-            spec = readr::fwf_widths(pl_size_legacy, col_names=pl_headers_legacy$geo)
-            out$geo = readr::read_fwf(file, spec, col_types=pl_spec_legacy)
+            col_length = nchar(readr::read_lines(file, n_max=1))
+            spec = if (col_length == 500) fwf_2010 else fwf_2000
+            types = rep("c", nrow(spec))
+            names(types) = spec$col_names
+            types["LOGRECNO"] = "i"
+
+            out$geo = readr::read_fwf(file, spec, col_types=types)
+            out$geo$GEOID = with(out$geo,
+                                 case_when(!is.na(BLOCK) ~ str_c("7500000US", STATE, COUNTY, TRACT, BLOCK),
+                                           !is.na(BLKGRP) ~ str_c("1500000US", STATE, COUNTY, TRACT, BLKGRP),
+                                           !is.na(TRACT) ~ str_c("1400000US", STATE, COUNTY, TRACT),
+                                           !is.na(COUNTY) ~ str_c("0500000US", STATE, COUNTY),
+                                           TRUE ~ NA_character_))
         }
     }
 
