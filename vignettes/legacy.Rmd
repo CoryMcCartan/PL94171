@@ -75,6 +75,11 @@ This uses a small subset of the prototype PL data for Rhode Island that's includ
 
 
 An additional useful feature is to select, subset, and add geometries in one function, using `pl_tidy_shp`. This relies on the `tigris` package in the background to download the relevant shapes. It also subsets to whatever data you have in the PL yyou provide a path to.
-```{r, eval = FALSE}
+```{r}
 shp <- pl_tidy_shp('RI', path)
+
+shp %>% 
+  ggplot() + 
+  geom_sf() + 
+  theme_void()
 ```
