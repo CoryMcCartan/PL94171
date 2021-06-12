@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   legacy: legacy.html
-last_built: 2021-06-12T15:19Z
+last_built: 2021-06-12T20:53Z
 urls:
   reference: https://corymccartan.github.io/PL94171/reference
   article: https://corymccartan.github.io/PL94171/articles
