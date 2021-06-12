@@ -8,3 +8,4 @@
 *.pdf
 .DS_Store
 docs
+inst/doc

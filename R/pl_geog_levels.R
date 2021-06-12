@@ -104,4 +104,4 @@ pl_geog_levels = dplyr::tibble(data.frame(
                            "State-School District (Unified)/Remainder")
 ))
 
-# prepared with `dpasta` packate from sum_level.csv file in data-raw/
+# prepared with `dpasta` package from sum_level.csv file in data-raw/

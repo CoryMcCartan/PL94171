@@ -21,7 +21,10 @@ Imports:
     purrr
 Suggests: 
     testthat (>= 3.0.0),
-    httr
+    httr,
+    knitr,
+    rmarkdown,
+    ggplot2
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -30,3 +33,4 @@ Roxygen: list(markdown = TRUE)
 URL: https://corymccartan.github.io/PL94171, https://github.com/CoryMcCartan/PL94171
 BugReports: https://github.com/CoryMcCartan/PL94171/issues
 Config/testthat/edition: 3
+VignetteBuilder: knitr
