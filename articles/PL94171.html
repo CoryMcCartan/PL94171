@@ -55,6 +55,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -101,7 +104,7 @@
 <li>Read in the four P.L. files (<code><a href="../reference/pl_read.html">pl_read()</a></code>, <code><a href="../reference/pl_url.html">pl_url()</a></code>)</li>
 <li>Combine the four files into one, and subset to the desired geography level (<code><a href="../reference/pl_subset.html">pl_subset()</a></code>; geography level codes listed in <code>pl_geog_levels</code>)</li>
 <li>Select the desired variables from the six included tables (<code><a href="../reference/pl_select_standard.html">pl_select_standard()</a></code>)</li>
-<li>Optionally, combine the processed data with the corresponding <a href="https://cran.r-project.org/web/packages/tigris/index.html"><code>tigris</code> shapefile</a>.</li>
+<li>Optionally, combine the processed data with the corresponding <a href="https://cran.r-project.org/package=tigris"><code>tigris</code> shapefile</a>.</li>
 </ol>
 <p>The utility function <code><a href="../reference/pl_tidy_shp.html">pl_tidy_shp()</a></code> combines all of these steps into one function for most common use case of tabulating basic redistricting information at the block level. This is demonstrated in <a href="../index.html">the README</a></p>
 </div>
@@ -109,7 +112,7 @@
 <h1 class="hasAnchor">
 <a href="#using-the-pl94171-package" class="anchor"></a>Using the <code>PL94171</code> package</h1>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://corymccartan.github.io/PL94171">PL94171</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://corymccartan.github.io/PL94171/">PL94171</a></span><span class="op">)</span></code></pre></div>
 <p>The four components of the P.L. 94-171 file should be downloaded into their own directory. Here, we’ll use the example data included in the package, from the 2018 end-to-end Census test in Providence County, Rhode Island, and read it into our R session. In general, you can provide a URL in place of a file path, and the package will read the data from the URL. The <code><a href="../reference/pl_url.html">pl_url()</a></code> function will automatically construct the URL to the data for a given state and year.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># `extdata/ri2018_2020Style.pl` is a directory with the four P.L. 94-171 files</span>

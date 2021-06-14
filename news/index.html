@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download TIGER Prototype shapefiles — pl_get_prototype • PL94171</title>
+<title>Changelog • PL94171</title>
 
 
 <!-- jquery -->
@@ -39,12 +39,7 @@
 
 
 
-<meta property="og:title" content="Download TIGER Prototype shapefiles — pl_get_prototype" />
-<meta property="og:description" content="
-These prototype shapefiles correspond to the Rhode Island end-to-end Census
-test and the accompanying prototype P.L. 94-171 data. This function is
-unlikely to be useful for working with any actual decennial Census data.
-The corresponding tigris functions should be used instead." />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -73,7 +68,7 @@ The corresponding tigris functions should be used instead." />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -128,89 +123,27 @@ The corresponding tigris functions should be used instead." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download TIGER Prototype shapefiles</h1>
-    <small class="dont-index">Source: <a href='https://github.com/CoryMcCartan/PL94171/blob/master/R/pl_get_prototype.R'><code>R/pl_get_prototype.R</code></a></small>
-    <div class="hidden name"><code>pl_get_prototype.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/CoryMcCartan/PL94171/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a>
-These prototype shapefiles correspond to the Rhode Island end-to-end Census
-test and the accompanying prototype P.L. 94-171 data. This function is
-unlikely to be useful for working with any actual decennial Census data.
-The corresponding <code>tigris</code> functions should be used instead.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>pl_get_prototype</span><span class='op'>(</span>
-  <span class='va'>geog</span>,
-  year <span class='op'>=</span> <span class='fl'>2020</span>,
-  full_state <span class='op'>=</span> <span class='cn'>TRUE</span>,
-  cache_to <span class='op'>=</span> <span class='cn'>NULL</span>,
-  clean_names <span class='op'>=</span> <span class='cn'>TRUE</span>,
-  refresh <span class='op'>=</span> <span class='cn'>FALSE</span>
-<span class='op'>)</span></pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>geog</th>
-      <td><p>Geography to download data for. See details for full list.</p></td>
-    </tr>
-    <tr>
-      <th>year</th>
-      <td><p>year, either 2010 or 2020</p></td>
-    </tr>
-    <tr>
-      <th>full_state</th>
-      <td><p>whether to return the full state (TRUE) or the single county subset (FALSE)</p></td>
-    </tr>
-    <tr>
-      <th>cache_to</th>
-      <td><p>the file name, if any, to cache the results to (as an RDS).
-If a file exists and <code>refresh=FALSE</code>, will read from this file.</p></td>
-    </tr>
-    <tr>
-      <th>clean_names</th>
-      <td><p>whether to clean and rename columns</p></td>
-    </tr>
-    <tr>
-      <th>refresh</th>
-      <td><p>if <code>TRUE</code>, force a re-download of the data.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>An <code>sf</code> object containing the blocks.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Current acceptable arguments to geog include:</p><ul>
-<li><p><code>block</code>: block</p></li>
-<li><p><code>block_group</code>: block group</p></li>
-<li><p><code>tract</code>: tract</p></li>
-<li><p><code>county</code>: county</p></li>
-<li><p><code>state</code>: state</p></li>
-<li><p><code>sld_low</code>: state legislative district lower house</p></li>
-<li><p><code>sld_up</code>: state legislative district upper house</p></li>
-<li><p><code>congressional_district</code>: federal congressional district</p></li>
-<li><p><code>place</code>: Census place</p></li>
-<li><p><code>voting_district</code>: voting tabulation district</p></li>
+    <div id="pl94171-010" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#pl94171-010" class="anchor"></a>PL94171 0.1.0</h1>
+<ul>
+<li>Initial release</li>
+<li>Functionality to download, read, subset, and tidy P.L. 94-171 files</li>
+<li>Ability to read files from 2000 and 2010, and retally according to updated Census geographies</li>
 </ul>
-
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='va'>shp</span> <span class='op'>&lt;-</span> <span class='fu'>pl_get_prototype</span><span class='op'>(</span><span class='st'>"block"</span><span class='op'>)</span>
-<span class='co'># }</span>
-
-</div></pre>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 
