@@ -13,8 +13,8 @@ Tools to process legacy format summary redistricting data files
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://corymccartan.github.io/PL94171}
-  \item \url{https://github.com/CoryMcCartan/PL94171}
+  \item \url{https://corymccartan.github.io/PL94171/}
+  \item \url{https://github.com/CoryMcCartan/PL94171/}
   \item Report bugs at \url{https://github.com/CoryMcCartan/PL94171/issues}
 }
 
