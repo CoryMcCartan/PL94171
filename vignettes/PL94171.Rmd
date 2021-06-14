@@ -44,7 +44,8 @@ So the basic process for working with legacy P.L. 94-171 data is:
 1. Combine the four files into one, and subset to the desired geography level 
    (`pl_subset()`; geography level codes listed in `pl_geog_levels`)
 1. Select the desired variables from the six included tables (`pl_select_standard()`)
-1. Optionally, combine the processed data with the corresponding [`tigris` shapefile](https://cran.r-project.org/web/packages/tigris/index.html).
+1. Optionally, combine the processed data with the corresponding 
+   [`tigris` shapefile](https://cran.r-project.org/package=tigris).
 
 The utility function `pl_tidy_shp()` combines all of these steps into one
 function for most common use case of tabulating basic redistricting information

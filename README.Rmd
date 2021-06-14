@@ -50,4 +50,4 @@ pl_tidy_shp("RI", pl_path)
 ```
 
 To tabulate at different geographies, or to extract other variables, check out
-the [Getting Started page](articles/PL94171.html).
+the [Getting Started page](https://corymccartan.github.io/PL94171/articles/PL94171.html).
