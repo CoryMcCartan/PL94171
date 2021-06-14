@@ -16,12 +16,11 @@ Imports:
     dplyr (>= 1.0.0),
     tigris,
     sf,
-    withr,
-    lifecycle,
-    purrr
+    withr
 Suggests: 
     testthat (>= 3.0.0),
     httr,
+    lifecycle,
     knitr,
     rmarkdown,
     ggplot2
