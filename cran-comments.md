@@ -4,7 +4,7 @@
 * windows-latest (on gh-actions), R 4.1.0
 * ubuntu 20.04 (on gh-actions), R 4.1.0
 * ubuntu 20.04 (on gh-actions) (devel)
-* win-builder (devel)
+* Windows server (on rhub), R 4.1.0
 
 ## R CMD check results
 
