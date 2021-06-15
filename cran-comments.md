@@ -1,9 +1,16 @@
+## Resubmission
+This is a resubmission. In this version we have:
+
+* Replaced `download.file()` with calls to `httr::GET()` to avoid new
+  libcurl and SSL errors on Windows.
+
 ## Test environments
 * local R installation, R 4.1.0
 * macOS-latest (on gh-actions), R 4.1.0
 * windows-latest (on gh-actions), R 4.1.0
 * ubuntu 20.04 (on gh-actions), R 4.1.0
 * ubuntu 20.04 (on gh-actions) (devel)
+* win-builder, R 4.1.0
 * Windows server (on rhub), R 4.1.0
 
 ## R CMD check results
