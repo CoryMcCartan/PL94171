@@ -27,7 +27,7 @@ pl_read = function(path, ...) {
             zip_dir = withr::local_tempdir(pattern="pl")
             for (p in path) {
                 zip_path = withr::local_tempfile(pattern="pl", fileext=".zip")
-                utils::download.file(p, zip_path, method="libcurl", quiet=!interactive())
+                download_census(p, zip_path)
                 utils::unzip(zip_path, exdir=zip_dir)
             }
             path = zip_dir
@@ -36,7 +36,7 @@ pl_read = function(path, ...) {
         }
     } else if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
         zip_path = withr::local_tempfile(pattern="pl", fileext=".zip")
-        utils::download.file(path, zip_path, method="libcurl", quiet=!interactive())
+        download_census(path, zip_path)
         zip_dir = file.path(dirname(zip_path), "PL-unzip")
         utils::unzip(zip_path, exdir=zip_dir)
         path = zip_dir
@@ -78,7 +78,7 @@ pl_read = function(path, ...) {
                                            TRUE ~ NA_character_))
         }
     }
-
+    withr::deferred_clear()
     out
 }
 

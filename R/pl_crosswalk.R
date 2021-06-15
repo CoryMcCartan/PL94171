@@ -33,8 +33,8 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
     }
 
     zip_path = withr::local_tempfile(file="baf")
-    utils::download.file(url, zip_path, method="libcurl", quiet=!interactive())
-
+    download_census(url = url, path = zip_path)
+    withr::deferred_clear()
     cw_d = readr::read_delim(zip_path, delim="|", col_types="cccdlddcdccdlddcdd",
                              progress=interactive())
     cw_d %>%

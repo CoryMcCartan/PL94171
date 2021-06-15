@@ -58,7 +58,7 @@ pl_get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL,
   zip_url = str_glue("https://www2.census.gov/geo/tiger/TIGER2018PLtest/{path_name}.zip")
   zip_path = withr::local_tempfile(file="baf")
   zip_dir = dirname(zip_path)
-  utils::download.file(zip_url, zip_path, method="libcurl", quiet=!interactive())
+  download_census(url = zip_url, path = zip_path)
 
   files = utils::unzip(zip_path, list=TRUE)$Name
   utils::unzip(zip_path, exdir=zip_dir)
@@ -77,6 +77,7 @@ pl_get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL,
   #            #center_lat=INTPTLAT20, center_lon=INTPTLON20,
   #            .data$geometry)
   # } else {
+  withr::deferred_clear()
     shp
   # }
 }
@@ -88,7 +89,7 @@ geog_to_folder <- c(block_group = 'BG',
                     place = 'PLACE',
                     sld_low = 'SLDL',
                     sld_up = 'SLDU',
-                    state = 'state',
+                    state = 'STATE',
                     block = 'TABBLOCK',
                     tract = 'TRACT',
                     voting_district = 'VTD')
