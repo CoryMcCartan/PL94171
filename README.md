@@ -9,6 +9,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/CoryMcCartan/PL94171/workflows/R-CMD-check/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions)
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 <!-- badges: end -->
 
 The **PL94171** package contains tools to process legacy format summary
@@ -18,7 +20,13 @@ are difficult to work with as-is.
 
 ## Installation
 
-You can install the development version from
+Install the latest version from CRAN with:
+
+``` r
+install.packages("PL94171")
+```
+
+You can also install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
