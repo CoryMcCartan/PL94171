@@ -32,7 +32,7 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
                        "TAB{yr_1}_TAB{yr_2}_ST{fips}.zip")
     }
 
-    zip_path = withr::local_tempfile(file="baf")
+    zip_path = withr::local_tempfile(fileext = "baf")
     download_census(url = url, path = zip_path)
     withr::deferred_clear()
     cw_d = readr::read_delim(zip_path, delim="|", col_types="cccdlddcdccdlddcdd",
