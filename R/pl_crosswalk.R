@@ -35,7 +35,7 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
     zip_path = withr::local_tempfile(fileext = "baf")
     download_census(url = url, path = zip_path)
     withr::deferred_clear()
-    cw_d = readr::read_delim(zip_path, delim="|", col_types="cccdlddcdccdlddcdd",
+    cw_d = readr::read_delim(zip_path, delim="|", col_types="cccclddccccdlddcdd",
                              progress=interactive())
     cw_d %>%
         rename_with(~ str_c(str_sub(., 0, -5), "fr"), ends_with(as.character(from_year))) %>%

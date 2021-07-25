@@ -1,3 +1,7 @@
+# PL94171 0.2.1
+* Fixes an issue where `pl_crosswalk` dropped leading 0s in `GEOID_to`
+* Cleans up partial match warnings
+
 # PL94171 0.1.0
 
 * Initial release
