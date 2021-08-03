@@ -13,7 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 <!-- badges: end -->
 
-<img align="right" height="240" src="man/figures/logo.png" />
+<img align="right" height="164" src="man/figures/logo.png" />
 
 The **PL94171** package contains tools to process legacy format summary
 redistricting data files produced by the United States Census Bureau
