@@ -6,6 +6,8 @@
 \alias{PL94171-package}
 \title{PL94171: Tabulate P.L. 94-171 Redistricting Data Summary Files}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Tools to process legacy format summary redistricting data files
     produced by the United States Census Bureau pursuant to P.L. 94-171. These
     files are generally available earlier but are difficult to work with as-is.

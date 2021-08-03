@@ -4,7 +4,7 @@
 \alias{pl_tidy_shp}
 \title{All-in-one Shapefile Function}
 \usage{
-pl_tidy_shp(abbr, path, year = 2020, ...)
+pl_tidy_shp(abbr, path, year = 2020, type = c("blocks", "vtds"), ...)
 }
 \arguments{
 \item{abbr}{The state to make the shapefile for}
@@ -26,7 +26,7 @@ Downloads block geography and merges with the cleaned PL 94-171 file.
 }
 \examples{
 \donttest{
-pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+pl_ex_path <- system.file("extdata/ri2018_2020Style.pl", package = "PL94171")
 pl_tidy_shp("RI", pl_ex_path)
 }
 

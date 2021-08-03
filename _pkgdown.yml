@@ -3,3 +3,17 @@ template:
   params:
     bootswatch: flatly
     ganalytics: UA-79274202-5
+reference:
+- title: Basic workflow
+  desc: Functions to tally standard redistricting variables for standard geographies.
+- contents:
+  - get_tidy_shp()
+  - has_concept("basic")
+- title: Advanced functions
+  desc: Functions for performing manual aggregation, comparison with previous Censuses, and more.
+- contents:
+  - has_concept("advanced")
+- title: Package data
+  desc: Example P.L. 94-171 data and reference geography suymmary level tables.
+- contents:
+  - has_concept("data")

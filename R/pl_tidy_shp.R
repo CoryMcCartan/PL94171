@@ -18,29 +18,45 @@
 #'
 #' @examples
 #' \donttest{
-#' pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
+#' pl_ex_path <- system.file("extdata/ri2018_2020Style.pl", package = "PL94171")
 #' pl_tidy_shp("RI", pl_ex_path)
 #' }
 #'
 #' @export
-pl_tidy_shp = function(abbr, path, year=2020, ...) {
-    blocks = tigris::blocks(abbr, year=year, progress_bar=interactive()) %>%
-        select(GEOID=starts_with("GEOID"),
-               state_code=.data$STATEFP,
-               county_code=.data$COUNTYFP,
+pl_tidy_shp = function(abbr, path, year=2020, type=c("blocks", "vtds"), ...) {
+    type = match.arg(type)
+    if (type == "blocks") {
+        units = tigris::blocks(abbr, year=year, progress_bar=interactive())
+    } else if (type == "vtds") {
+        if (year == 2020) {
+            units = pl_get_vtd(abbr)
+        } else if (year == 2010L) {
+            units = tigris::voting_districts(abbr, progress_bar=interactive())
+        } else {
+            stop("VTDs not supported for years prior to 2010")
+        }
+    }
+
+    sumlev = if (type == "blocks") "750" else if (type == "vtds") "700"
+
+    units = units %>%
+        select(GEOID=starts_with("GEOID")[1],
+               state_code=starts_with("STATEFP")[1],
+               county_code=starts_with("COUNTYFP")[1],
                area_land=starts_with("ALAND"),
                area_water=starts_with("AWATER"),
                .data$geometry) %>%
        left_join(tigris::fips_codes, by=c("state_code", "county_code")) %>%
        select(.data$GEOID, .data$state, .data$county,
               .data$area_land, .data$area_water, .data$geometry)
+    print(head(units, 2))
     pl = read_pl(path) %>%
         pl_widen() %>%
-        pl_subset("750") %>%
+        pl_subset(sumlev) %>%
         pl_select_standard(clean_names=TRUE) %>%
         filter(...) %>%
         select(-.data$row_id, -.data$summary_level, -.data$county)
-    left_join(pl, blocks, by=c("GEOID", "state")) %>%
+    left_join(pl, units, by=c("GEOID", "state")) %>%
         relocate(.data$county, .after=.data$state) %>%
         sf::st_as_sf()
 }

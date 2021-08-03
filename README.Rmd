@@ -24,6 +24,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 <!-- badges: end -->
 
+<img align="right" height="240" src="man/figures/logo.png" />
+
 The **PL94171** package contains tools to process legacy format summary
 redistricting data files produced by the United States Census Bureau pursuant to
 P.L. 94-171. These files are generally available earlier but are difficult to
@@ -46,8 +48,8 @@ devtools::install_github("CoryMcCartan/PL94171")
 
 ## Basic Usage
 
-Just need block-level data for total and voting-age population by race? Then
-`pl_tidy_shp()` is all you need.
+Just need block- or precicnt-level data for total and voting-age population by
+race? Then `pl_tidy_shp()` is all you need.
 
 ```{r}
 library(PL94171)

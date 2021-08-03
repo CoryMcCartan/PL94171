@@ -13,6 +13,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 <!-- badges: end -->
 
+<img align="right" height="240" src="man/figures/logo.png" />
+
 The **PL94171** package contains tools to process legacy format summary
 redistricting data files produced by the United States Census Bureau
 pursuant to P.L. 94-171. These files are generally available earlier but
@@ -36,18 +38,29 @@ devtools::install_github("CoryMcCartan/PL94171")
 
 ## Basic Usage
 
-Just need block-level data for total and voting-age population by race?
-Then `pl_tidy_shp()` is all you need.
+Just need block- or precicnt-level data for total and voting-age
+population by race? Then `pl_tidy_shp()` is all you need.
 
 ``` r
 library(PL94171)
 # put the path to the PL 94-171 files here, or use `pl_url()` to download them
 pl_path = system.file("extdata/ri2018_2020Style.pl", package="PL94171")
 pl_tidy_shp("RI", pl_path)
-#> Simple feature collection with 569 features and 24 fields (with 14 geometries empty)
+#> Simple feature collection with 2 features and 5 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
-#> Bounding box:  xmin: -71.43177 ymin: 41.77241 xmax: -71.36969 ymax: 41.82055
+#> Bounding box:  xmin: -71.71127 ymin: 41.33654 xmax: -71.4672 ymax: 41.39571
+#> Geodetic CRS:  NAD83
+#>             GEOID state            county area_land area_water
+#> 1 440090515033040    RI Washington County     38410          0
+#> 2 440090511013077    RI Washington County     19661          0
+#>                         geometry
+#> 1 MULTIPOLYGON (((-71.47043 4...
+#> 2 MULTIPOLYGON (((-71.71127 4...
+#> Simple feature collection with 569 features and 24 fields (with 86 geometries empty)
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: -71.42641 ymin: 41.77238 xmax: -71.36969 ymax: 41.82
 #> Geodetic CRS:  NAD83
 #> # A tibble: 569 x 25
 #>    GEOID      state county     vtd     pop pop_hisp pop_white pop_black pop_aian
