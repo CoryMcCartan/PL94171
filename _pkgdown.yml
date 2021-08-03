@@ -7,7 +7,7 @@ reference:
 - title: Basic workflow
   desc: Functions to tally standard redistricting variables for standard geographies.
 - contents:
-  - get_tidy_shp()
+  - get_tidy_shp
   - has_concept("basic")
 - title: Advanced functions
   desc: Functions for performing manual aggregation, comparison with previous Censuses, and more.
