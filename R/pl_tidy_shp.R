@@ -10,6 +10,8 @@
 #' @param path The path to the PL files, as in [pl_read()]
 #' @param year The year to download the block geography for. Should match the
 #'   year of the PL files.
+#' @param type If `"blocks"`, make a Census block shapefile; if `"vtds"` make a
+#'   VTD shapefile.
 #' @param ... passed on to [dplyr::filter()]; use to subset to a certain county,
 #'   for example.
 #'
@@ -50,7 +52,7 @@ pl_tidy_shp = function(abbr, path, year=2020, type=c("blocks", "vtds"), ...) {
        left_join(tigris::fips_codes, by=c("state_code", "county_code")) %>%
        select(.data$GEOID, .data$state, .data$county,
               .data$area_land, .data$area_water, .data$geometry)
-    print(head(units, 2))
+
     pl = read_pl(path) %>%
         pl_widen() %>%
         pl_subset(sumlev) %>%

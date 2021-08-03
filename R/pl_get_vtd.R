@@ -30,11 +30,11 @@ pl_get_vtd = function(abbr, cache_to=NULL, refresh=FALSE) {
     zip_path = withr::local_tempfile(fileext = "zip")
     download_census(zip_url, zip_path)
 
-    unz_path = file.path(dirname(zip_path), glue::glue("vtd_2020_{fips}"))
+    unz_path = file.path(dirname(zip_path), stringr::str_glue("vtd_2020_{fips}"))
 
     utils::unzip(zipfile=zip_path, exdir=unz_path)
 
-    out = sf::read_sf(file.path(unz_path, glue::glue("tl_2020_{fips}_vtd20.shp")))
+    out = sf::read_sf(file.path(unz_path, stringr::str_glue("tl_2020_{fips}_vtd20.shp")))
 
     if (!is.null(cache_to)) {
         saveRDS(out, file=cache_to, compress="gzip")

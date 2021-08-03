@@ -14,6 +14,9 @@ pl_tidy_shp(abbr, path, year = 2020, type = c("blocks", "vtds"), ...)
 \item{year}{The year to download the block geography for. Should match the
 year of the PL files.}
 
+\item{type}{If \code{"blocks"}, make a Census block shapefile; if \code{"vtds"} make a
+VTD shapefile.}
+
 \item{...}{passed on to \code{\link[dplyr:filter]{dplyr::filter()}}; use to subset to a certain county,
 for example.}
 }
