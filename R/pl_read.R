@@ -101,6 +101,7 @@ read_pl = pl_read
 #' @examples
 #' pl_url("RI", 2010)
 #'
+#' @concept basic
 #' @export
 pl_url = function(abbr, year=2010) {
     name = tigris::fips_codes$state_name[match(abbr, tigris::fips_codes$state)]

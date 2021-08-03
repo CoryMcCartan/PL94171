@@ -46,7 +46,7 @@ devtools::install_github("CoryMcCartan/PL94171")
 
 ## Basic Usage
 
-Just need block- or precicnt-level data for total and voting-age population by
+Just need block- or precinct-level data for total and voting-age population by
 race? Then `pl_tidy_shp()` is all you need.
 
 ```{r}
