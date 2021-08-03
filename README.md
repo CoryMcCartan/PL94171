@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files
+# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.github.io/PL94171'><img src='man/figures/logo.png' align="right" height="320" style="padding: 12px" /></a>
 
 <!-- badges: start -->
 
@@ -12,8 +12,6 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN
 status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 <!-- badges: end -->
-
-<img align="right" height="164" src="man/figures/logo.png" />
 
 The **PL94171** package contains tools to process legacy format summary
 redistricting data files produced by the United States Census Bureau
