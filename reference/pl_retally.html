@@ -178,17 +178,7 @@ block geometries.</p>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='va'>crosswalk</span> <span class='op'>=</span> <span class='fu'><a href='pl_crosswalk.html'>pl_crosswalk</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span>, <span class='fl'>2020</span><span class='op'>)</span>
 <span class='va'>RI_2010</span> <span class='op'>=</span> <span class='fu'><a href='pl_tidy_shp.html'>pl_tidy_shp</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fu'><a href='pl_url.html'>pl_url</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span><span class='op'>)</span>, <span class='fl'>2010</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Simple feature collection with 2 features and 5 fields
-#&gt; Geometry type: MULTIPOLYGON
-#&gt; Dimension:     XY
-#&gt; Bounding box:  xmin: -71.30819 ymin: 41.72192 xmax: -71.30357 ymax: 41.72608
-#&gt; Geodetic CRS:  NAD83
-#&gt;             GEOID state         county area_land area_water
-#&gt; 1 440010304002022    RI Bristol County     14559          0
-#&gt; 2 440010304002013    RI Bristol County     15213          0
-#&gt;                         geometry
-#&gt; 1 MULTIPOLYGON (((-71.3074 41...
-#&gt; 2 MULTIPOLYGON (((-71.3062 41...</div><div class='input'><span class='fu'>pl_retally</span><span class='op'>(</span><span class='va'>RI_2010</span>, <span class='va'>crosswalk</span><span class='op'>)</span>
+<span class='fu'>pl_retally</span><span class='op'>(</span><span class='va'>RI_2010</span>, <span class='va'>crosswalk</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 25,649 × 24</span>
 #&gt;    GEOID           state county vtd   area_land area_water   pop pop_hisp pop_white
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
