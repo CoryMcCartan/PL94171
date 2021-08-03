@@ -8,6 +8,13 @@
 
 <title>Approximately re-tally Census data under new block boundaries — pl_retally • PL94171</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -43,6 +50,7 @@
 <meta property="og:description" content="Applies a block crosswalk to a table of block data using areal interpolation.
 That is, the fraction of land area in the overlapping region between old and
 new blocks is used to divide the population of the old blocks into the new." />
+<meta property="og:image" content="https://corymccartan.github.io/PL94171/logo.png" />
 
 
 
@@ -84,7 +92,7 @@ new blocks is used to divide the population of the old blocks into the new." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -170,20 +178,30 @@ block geometries.</p>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='va'>crosswalk</span> <span class='op'>=</span> <span class='fu'><a href='pl_crosswalk.html'>pl_crosswalk</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span>, <span class='fl'>2020</span><span class='op'>)</span>
 <span class='va'>RI_2010</span> <span class='op'>=</span> <span class='fu'><a href='pl_tidy_shp.html'>pl_tidy_shp</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fu'><a href='pl_url.html'>pl_url</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span><span class='op'>)</span>, <span class='fl'>2010</span><span class='op'>)</span>
-<span class='fu'>pl_retally</span><span class='op'>(</span><span class='va'>RI_2010</span>, <span class='va'>crosswalk</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 25,649 x 24</span>
-#&gt;    GEOID     state county    vtd   area_land area_water   pop pop_hisp pop_white
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>329          0    15        3        13
-#&gt; <span style='color: #BCBCBC;'> 2</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>6</span>001          0     8        0         6
-#&gt; <span style='color: #BCBCBC;'> 3</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>11</span>821          0    17        0        17
-#&gt; <span style='color: #BCBCBC;'> 4</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>049          0    28        0        28
-#&gt; <span style='color: #BCBCBC;'> 5</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>398          0    12        0         9
-#&gt; <span style='color: #BCBCBC;'> 6</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>181</span>092          0    93        1        84
-#&gt; <span style='color: #BCBCBC;'> 7</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>17</span>056          0    23        0        23
-#&gt; <span style='color: #BCBCBC;'> 8</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>672          0    28        0        28
-#&gt; <span style='color: #BCBCBC;'> 9</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>7</span>291          0     9        0         9
-#&gt; <span style='color: #BCBCBC;'>10</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>164</span>924          0    70        1        64
+</div><div class='output co'>#&gt; Simple feature collection with 2 features and 5 fields
+#&gt; Geometry type: MULTIPOLYGON
+#&gt; Dimension:     XY
+#&gt; Bounding box:  xmin: -71.30819 ymin: 41.72192 xmax: -71.30357 ymax: 41.72608
+#&gt; Geodetic CRS:  NAD83
+#&gt;             GEOID state         county area_land area_water
+#&gt; 1 440010304002022    RI Bristol County     14559          0
+#&gt; 2 440010304002013    RI Bristol County     15213          0
+#&gt;                         geometry
+#&gt; 1 MULTIPOLYGON (((-71.3074 41...
+#&gt; 2 MULTIPOLYGON (((-71.3062 41...</div><div class='input'><span class='fu'>pl_retally</span><span class='op'>(</span><span class='va'>RI_2010</span>, <span class='va'>crosswalk</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 25,649 × 24</span>
+#&gt;    GEOID           state county vtd   area_land area_water   pop pop_hisp pop_white
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>329          0    15        3        13
+#&gt; <span style='color: #BCBCBC;'> 2</span> 440010301001001 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>6</span>001          0     8        0         6
+#&gt; <span style='color: #BCBCBC;'> 3</span> 440010301001002 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>11</span>821          0    17        0        17
+#&gt; <span style='color: #BCBCBC;'> 4</span> 440010301001003 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>049          0    28        0        28
+#&gt; <span style='color: #BCBCBC;'> 5</span> 440010301001004 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>398          0    12        0         9
+#&gt; <span style='color: #BCBCBC;'> 6</span> 440010301001005 RI    Brist… <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>181</span>092          0    93        1        84
+#&gt; <span style='color: #BCBCBC;'> 7</span> 440010301001006 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>17</span>056          0    23        0        23
+#&gt; <span style='color: #BCBCBC;'> 8</span> 440010301001007 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>672          0    28        0        28
+#&gt; <span style='color: #BCBCBC;'> 9</span> 440010301001008 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>7</span>291          0     9        0         9
+#&gt; <span style='color: #BCBCBC;'>10</span> 440010301001009 RI    Brist… <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>164</span>924          0    70        1        64
 #&gt; <span style='color: #949494;'># … with 25,639 more rows, and 15 more variables: pop_black &lt;int&gt;,</span>
 #&gt; <span style='color: #949494;'>#   pop_aian &lt;int&gt;, pop_asian &lt;int&gt;, pop_nhpi &lt;int&gt;, pop_other &lt;int&gt;,</span>
 #&gt; <span style='color: #949494;'>#   pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;, vap_white &lt;int&gt;, vap_black &lt;int&gt;,</span>

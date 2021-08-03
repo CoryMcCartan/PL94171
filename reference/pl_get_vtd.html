@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • PL94171</title>
+<title>Download 2020 Voting District Shapefiles — pl_get_vtd • PL94171</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,10 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Download 2020 Voting District Shapefiles — pl_get_vtd" />
+<meta property="og:description" content="
+A (likely temporary) function to download TIGER shapefiles for 2020 voting
+tabulation districts (VTDs)." />
 <meta property="og:image" content="https://corymccartan.github.io/PL94171/logo.png" />
 
 
@@ -76,7 +79,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -131,48 +134,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/CoryMcCartan/PL94171/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Download 2020 Voting District Shapefiles</h1>
+    <small class="dont-index">Source: <a href='https://github.com/CoryMcCartan/PL94171/blob/master/R/pl_get_vtd.R'><code>R/pl_get_vtd.R</code></a></small>
+    <div class="hidden name"><code>pl_get_vtd.Rd</code></div>
     </div>
 
-    <div id="pl94171-030" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.0">
-<a href="#pl94171-030" class="anchor"></a>PL94171 0.3.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Adds a <code>type</code> option to <code><a href="../reference/pl_tidy_shp.html">pl_tidy_shp()</a></code>, allowing for tidy block or VTD shapefiles.</li>
-<li>Adds a <code><a href="../reference/pl_get_vtd.html">pl_get_vtd()</a></code> function to download 2020 VTD boundaries from the Census.</li>
-<li>Fixes an issue where <code>pl_crosswalk</code> dropped leading 0s in <code>GEOID_to</code>.</li>
-<li>Cleans up partial match warnings.</li>
-</ul>
-</div>
-    <div id="pl94171-020" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.0">
-<a href="#pl94171-020" class="anchor"></a>PL94171 0.2.0<small> 2021-06-15 </small>
-</h1>
-<ul>
-<li>Initial CRAN release.</li>
-<li>Avoid new libcurl and SSL errors on Windows.</li>
-</ul>
-</div>
-    <div id="pl94171-010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#pl94171-010" class="anchor"></a>PL94171 0.1.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Initial release.</li>
-<li>Functionality to download, read, subset, and tidy P.L. 94-171 files.</li>
-<li>Ability to read files from 2000 and 2010, and retally according to updated Census geographies.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a>
+A (likely temporary) function to download TIGER shapefiles for 2020 voting
+tabulation districts (VTDs).</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>pl_get_vtd</span><span class='op'>(</span><span class='va'>abbr</span>, cache_to <span class='op'>=</span> <span class='cn'>NULL</span>, refresh <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>abbr</th>
+      <td><p>Geography to download data for. See details for full list.</p></td>
+    </tr>
+    <tr>
+      <th>cache_to</th>
+      <td><p>the file name, if any, to cache the results to (as an RDS).
+If a file exists and <code>refresh=FALSE</code>, will read from this file.</p></td>
+    </tr>
+    <tr>
+      <th>refresh</th>
+      <td><p>if <code>TRUE</code>, force a re-download of the data.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An <code>sf</code> object containing the VTDs.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='va'>shp</span> <span class='op'>&lt;-</span> <span class='fu'>pl_get_vtd</span><span class='op'>(</span><span class='st'>"RI"</span><span class='op'>)</span>
+<span class='co'># }</span>
+
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

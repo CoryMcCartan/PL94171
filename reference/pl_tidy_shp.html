@@ -8,6 +8,13 @@
 
 <title>All-in-one Shapefile Function — pl_tidy_shp • PL94171</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -41,6 +48,7 @@
 
 <meta property="og:title" content="All-in-one Shapefile Function — pl_tidy_shp" />
 <meta property="og:description" content="Downloads block geography and merges with the cleaned PL 94-171 file." />
+<meta property="og:image" content="https://corymccartan.github.io/PL94171/logo.png" />
 
 
 
@@ -82,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -133,7 +141,7 @@
     <p>Downloads block geography and merges with the cleaned PL 94-171 file.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pl_tidy_shp</span><span class='op'>(</span><span class='va'>abbr</span>, <span class='va'>path</span>, year <span class='op'>=</span> <span class='fl'>2020</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>pl_tidy_shp</span><span class='op'>(</span><span class='va'>abbr</span>, <span class='va'>path</span>, year <span class='op'>=</span> <span class='fl'>2020</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"blocks"</span>, <span class='st'>"vtds"</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -165,26 +173,36 @@ state.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='va'>pl_ex_path</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>'extdata/ri2018_2020Style.pl'</span>, package <span class='op'>=</span> <span class='st'>'PL94171'</span><span class='op'>)</span>
+<span class='va'>pl_ex_path</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata/ri2018_2020Style.pl"</span>, package <span class='op'>=</span> <span class='st'>"PL94171"</span><span class='op'>)</span>
 <span class='fu'>pl_tidy_shp</span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='va'>pl_ex_path</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Simple feature collection with 569 features and 24 fields (with 14 geometries empty)
+</div><div class='output co'>#&gt; Simple feature collection with 2 features and 5 fields
+#&gt; Geometry type: MULTIPOLYGON
+#&gt; Dimension:     XY
+#&gt; Bounding box:  xmin: -71.6161 ymin: 41.38 xmax: -71.4697 ymax: 41.72758
+#&gt; Geodetic CRS:  NAD83
+#&gt;             GEOID state            county area_land area_water
+#&gt; 1 440030223003030    RI       Kent County    254857       2397
+#&gt; 2 440090513025005    RI Washington County    454758       3108
+#&gt;                         geometry
+#&gt; 1 MULTIPOLYGON (((-71.48041 4...
+#&gt; 2 MULTIPOLYGON (((-71.61604 4...</div><div class='output co'>#&gt; Simple feature collection with 569 features and 24 fields (with 14 geometries empty)
 #&gt; Geometry type: MULTIPOLYGON
 #&gt; Dimension:     XY
 #&gt; Bounding box:  xmin: -71.43177 ymin: 41.77241 xmax: -71.36969 ymax: 41.82055
 #&gt; Geodetic CRS:  NAD83
-#&gt; <span style='color: #949494;'># A tibble: 569 x 25</span>
-#&gt;    GEOID      state county     vtd     pop pop_hisp pop_white pop_black pop_aian
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> 440070001… RI    Providenc… 4428…     0        0         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 2</span> 440070001… RI    Providenc… 4428…     0        0         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 3</span> 440070001… RI    Providenc… 4428…     0        0         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 4</span> 440070001… RI    Providenc… 4428…    50        0        50         0        0
-#&gt; <span style='color: #BCBCBC;'> 5</span> 440070001… RI    Providenc… 4428…     0        0         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 6</span> 440070001… RI    Providenc… 4428…     0        0         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 7</span> 440070001… RI    Providenc… 4428…    18       18         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 8</span> 440070001… RI    Providenc… 4428…     0        0         0         0        0
-#&gt; <span style='color: #BCBCBC;'> 9</span> 440070001… RI    Providenc… 4428…    86       86         0         0        0
-#&gt; <span style='color: #BCBCBC;'>10</span> 440070001… RI    Providenc… 4428…    19        0         0        19        0
+#&gt; <span style='color: #949494;'># A tibble: 569 × 25</span>
+#&gt;    GEOID           state county vtd     pop pop_hisp pop_white pop_black pop_aian
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> 440070001011000 RI    Provi… 4428…     0        0         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 2</span> 440070001011001 RI    Provi… 4428…     0        0         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 3</span> 440070001011002 RI    Provi… 4428…     0        0         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 4</span> 440070001011003 RI    Provi… 4428…    50        0        50         0        0
+#&gt; <span style='color: #BCBCBC;'> 5</span> 440070001011004 RI    Provi… 4428…     0        0         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 6</span> 440070001011005 RI    Provi… 4428…     0        0         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 7</span> 440070001011006 RI    Provi… 4428…    18       18         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 8</span> 440070001011007 RI    Provi… 4428…     0        0         0         0        0
+#&gt; <span style='color: #BCBCBC;'> 9</span> 440070001011008 RI    Provi… 4428…    86       86         0         0        0
+#&gt; <span style='color: #BCBCBC;'>10</span> 440070001011009 RI    Provi… 4428…    19        0         0        19        0
 #&gt; <span style='color: #949494;'># … with 559 more rows, and 16 more variables: pop_asian &lt;int&gt;, pop_nhpi &lt;int&gt;,</span>
 #&gt; <span style='color: #949494;'>#   pop_other &lt;int&gt;, pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;, vap_white &lt;int&gt;,</span>
 #&gt; <span style='color: #949494;'>#   vap_black &lt;int&gt;, vap_aian &lt;int&gt;, vap_asian &lt;int&gt;, vap_nhpi &lt;int&gt;,</span>

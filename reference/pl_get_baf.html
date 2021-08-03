@@ -8,6 +8,13 @@
 
 <title>Download 2020 Block Assignment Files for a State — pl_get_baf • PL94171</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -46,6 +53,7 @@ products that the Census Bureau provides to states and other data users
 containing the small area census data necessary for legislative
 redistricting.  The BAFs contain Census tabulation block codes and geographic
 area codes for a specific geographic entity type.&quot;" />
+<meta property="og:image" content="https://corymccartan.github.io/PL94171/logo.png" />
 
 
 
@@ -87,7 +95,7 @@ area codes for a specific geographic entity type.&quot;" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -174,7 +182,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>pl_get_baf</span><span class='op'>(</span><span class='st'>"RI"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $INCPLACE_CDP
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         PLACEFP
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 <span style='color: #BB0000;'>NA</span>     
@@ -190,7 +198,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $MCD
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 3</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 3</span>
 #&gt;    BLOCKID         COUNTYFP COUSUBFP
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 001      05140   
@@ -206,7 +214,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $VTD
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 3</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 3</span>
 #&gt;    BLOCKID         COUNTYFP DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 001      440101  
@@ -222,7 +230,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $CD
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 01      
@@ -238,7 +246,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $SLDU
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 032     
@@ -254,7 +262,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $SLDL
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 066     
@@ -270,7 +278,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $SDSEC
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 <span style='color: #BB0000;'>NA</span>      
@@ -286,7 +294,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $SDELM
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 <span style='color: #BB0000;'>NA</span>      
@@ -302,7 +310,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $SDUNI
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 2</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 2</span>
 #&gt;    BLOCKID         DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 00030   
@@ -318,7 +326,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; 
 #&gt; $AIANNH
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 3</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 3</span>
 #&gt;    BLOCKID         AIANNHCE COMPTYP
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 <span style='color: #BB0000;'>NA</span>       <span style='color: #BB0000;'>NA</span>     
@@ -334,7 +342,7 @@ If a file exists and <code>refresh=FALSE</code>, will read BAF from this file.</
 #&gt; <span style='color: #949494;'># … with 25,639 more rows</span>
 #&gt; </div><div class='input'><span class='fu'>pl_get_baf</span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='st'>"VTD"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $VTD
-#&gt; <span style='color: #949494;'># A tibble: 25,649 x 3</span>
+#&gt; <span style='color: #949494;'># A tibble: 25,649 × 3</span>
 #&gt;    BLOCKID         COUNTYFP DISTRICT
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
 #&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 001      440101  
