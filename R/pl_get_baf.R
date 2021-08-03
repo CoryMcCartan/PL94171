@@ -39,7 +39,7 @@ pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     zip_dir = dirname(zip_path)
     download_census(zip_url, zip_path)
 
-    files = utils::unzip(zip_path, list=T)$Name
+    files = utils::unzip(zip_path, list=TRUE)$Name
     utils::unzip(zip_path, exdir=zip_dir)
     out = list()
     for (fname in files) {
@@ -47,7 +47,7 @@ pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
         if (!is.null(geographies) && !(geogr %in% geographies)) next
         table = readr::read_delim(file.path(zip_dir, fname), delim="|",
                                   col_types=readr::cols(.default="c"),
-                                  progress=interactive())
+                                  progress=interactive(), lazy = FALSE)
         # check final column is not all NA
         if (!all(is.na(table[[ncol(table)]]))) {
             out[[geogr]] = table
