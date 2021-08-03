@@ -33,6 +33,7 @@
 #' shp <- pl_get_prototype("block")
 #' }
 #'
+#' @concept advanced
 #' @export
 pl_get_prototype = function(geog, year = 2020, full_state = TRUE, cache_to=NULL,
                             clean_names=TRUE, refresh=FALSE) {

@@ -22,6 +22,7 @@
 #' pl_tidy_shp("RI", pl_ex_path)
 #' }
 #'
+#' @concept basic
 #' @export
 pl_tidy_shp = function(abbr, path, year=2020, type=c("blocks", "vtds"), ...) {
     type = match.arg(type)

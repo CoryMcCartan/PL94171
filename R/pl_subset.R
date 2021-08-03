@@ -14,6 +14,8 @@
 #' @param sumlev the summary level to filter to. A 3 character SUMLEV code. Default is '750' for blocks.
 #'
 #' @return tibble
+#'
+#' @concept basic
 #' @export
 #'
 #' @importFrom dplyr filter

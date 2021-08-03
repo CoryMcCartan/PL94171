@@ -23,6 +23,7 @@
 #' pl_get_baf("RI")
 #' pl_get_baf("RI", "VTD")
 #'
+#' @concept advanced
 #' @export
 pl_get_baf = function(abbr, geographies=NULL, cache_to=NULL, refresh=FALSE) {
     if (!is.null(cache_to) && file.exists(cache_to) && !refresh) {

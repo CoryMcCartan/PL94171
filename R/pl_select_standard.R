@@ -22,6 +22,8 @@
 #' @param clean_names whether to clean names
 #'
 #' @return A [tibble] with the selected and optionally renamed columns
+#'
+#' @concept basic
 #' @export
 #'
 #' @examples

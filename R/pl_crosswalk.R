@@ -12,6 +12,7 @@
 #' @examples
 #' pl_crosswalk("RI", 2010, 2020)
 #'
+#' @concept advanced
 #' @export
 pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
     fips = tigris::fips_codes$state_code[match(abbr, tigris::fips_codes$state)]
@@ -86,6 +87,7 @@ is_const_rel = function(x) {
 #' pl_retally(RI_2010, crosswalk)
 #' }
 #'
+#' @concept advanced
 #' @export
 pl_retally = function(d_from, crosswalk) {
     if (inherits(d_from, "sf")) {

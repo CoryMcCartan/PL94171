@@ -10,6 +10,7 @@
 #' \item{SUMLEV_description}{The summary level description}
 #' }
 #'
+#' @concept data
 #' @export
 pl_geog_levels = dplyr::tibble(data.frame(
     SUMLEV = c("040","050","060","067",

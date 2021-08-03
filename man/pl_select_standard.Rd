@@ -40,3 +40,4 @@ pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
 pl <- pl_read(pl_ex_path)
 pl <- pl_select_standard(pl)
 }
+\concept{basic}

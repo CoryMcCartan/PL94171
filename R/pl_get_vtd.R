@@ -16,6 +16,7 @@
 #' shp <- pl_get_vtd("RI")
 #' }
 #'
+#' @concept basic
 #' @export
 pl_get_vtd = function(abbr, cache_to=NULL, refresh=FALSE) {
     if (!is.null(cache_to) && file.exists(cache_to) && !refresh) {
