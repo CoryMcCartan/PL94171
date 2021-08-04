@@ -3,6 +3,7 @@
 * Adds a `pl_get_vtd()` function to download 2020 VTD boundaries from the Census.
 * Fixes an issue where `pl_crosswalk` dropped leading 0s in `GEOID_to`.
 * Cleans up partial match warnings.
+* Fixes Windows issue with readr 2.0.0
 
 # PL94171 0.2.0
 
