@@ -10,6 +10,9 @@
 
 0 errors | 0 warnings | 0 notes
 
+* This release also fixes an existing bug introduced by `readr` that caused
+errors on Windows platforms.
+
 * Examples are \donttest in `pl_get_prototype()`, `pl_tidy_shp()`,
 `pl_get_vtd()`, and `pl_retally()` because they require moderately large files
 to be downloaded from the Internet, taking more than 5-10 seconds on average.
