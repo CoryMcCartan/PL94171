@@ -1,7 +1,7 @@
 Package: PL94171
 Type: Package
 Title: Tabulate P.L. 94-171 Redistricting Data Summary Files
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: c(
     person("Cory", "McCartan", email = "cmccartan@g.harvard.edu", role = c("aut", "cre")),
     person("Christopher T.", "Kenny", email = "christopherkenny@fas.harvard.edu", role = "aut"))

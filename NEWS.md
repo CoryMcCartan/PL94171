@@ -1,3 +1,6 @@
+# PL94171 0.3.1
+* Fixes URL redirect in README logo.
+
 # PL94171 0.3.0
 * Adds a `type` option to `pl_tidy_shp()`, allowing for tidy block or VTD shapefiles.
 * Adds a `pl_get_vtd()` function to download 2020 VTD boundaries from the Census.
