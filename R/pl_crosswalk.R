@@ -10,7 +10,10 @@
 #' @return A tibble, with two sets of GEOIDs and overlap information.
 #'
 #' @examples
+#' \donttest{
+#' # Takes a bit of time to run
 #' pl_crosswalk("RI", 2010, 2020)
+#' }
 #'
 #' @concept advanced
 #' @export

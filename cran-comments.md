@@ -22,3 +22,5 @@ errors on Windows platforms.
 `pl_get_vtd()`, and `pl_retally()` because they require moderately large files
 to be downloaded from the Internet, taking more than 5-10 seconds on average.
 These functions are tested in a local test and/or in vignettes instead.
+* After pretesting for the 0.3.1 submission, we have now included `pl_crosswalk`
+in a \donttest for the same reasons as above.
