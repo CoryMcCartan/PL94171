@@ -1,3 +1,6 @@
+# PL94171 1.0.0
+* Tested and updated for the 2020 decennial census release.
+
 # PL94171 0.3.1
 * Fixes URL redirect in README logo.
 

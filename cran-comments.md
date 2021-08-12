@@ -1,8 +1,3 @@
-## Resubmission
-This is a resubmission. In this version we have:
-
-* Added a trailing slash to a URL in the README to fix a 301 redirect.
-
 ## Test environments
 * local R installation, R 4.1.0
 * macOS-latest (on gh-actions), R 4.1.0
