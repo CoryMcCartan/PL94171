@@ -21,7 +21,10 @@ Downloads crosswalks from \url{https://www.census.gov/geographies/reference-file
 Adjusts land overlap area to ensure weights sum to 1.
 }
 \examples{
+\donttest{
+# Takes a bit of time to run
 pl_crosswalk("RI", 2010, 2020)
+}
 
 }
 \concept{advanced}
