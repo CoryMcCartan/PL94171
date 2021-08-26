@@ -39,8 +39,14 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
     zip_path = withr::local_tempfile(fileext = "baf")
     download_census(url = url, path = zip_path)
     withr::deferred_clear()
-    cw_d = readr::read_delim(zip_path, delim="|", col_types="cccclddccccdlddcdd",
-                             progress=interactive())
+    if (yr_2 == "2010") {
+        cw_d = readr::read_delim(zip_path, skip = 0, delim = ",", col_types = "cccclddccccdlddcdc")
+        names(cw_d)[length(cw_d)] = "AREAWATER_INT"
+        cw_d$AREAWATER_INT = cw_d$AREAWATER_INT %>% str_replace_all("[^0-9]", "") %>% as.integer()
+    } else {
+        cw_d = readr::read_delim(zip_path, delim = "|", col_types = "cccclddccccdlddcdd", 
+                             progress = interactive())
+    }
     cw_d %>%
         rename_with(~ str_c(str_sub(., 0, -5), "fr"), ends_with(as.character(from_year))) %>%
         rename_with(~ str_c(str_sub(., 0, -5), "to"), ends_with(as.character(to_year))) %>%
