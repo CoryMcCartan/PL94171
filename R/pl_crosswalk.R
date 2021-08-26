@@ -42,7 +42,7 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
     if (yr_2 == "2010") {
         cw_d = readr::read_delim(zip_path, skip = 0, delim = ",", col_types = "cccclddccccdlddcdc")
         names(cw_d)[length(cw_d)] = "AREAWATER_INT"
-        cw_d$AREAWATER_INT = cw_d$AREAWATER_INT %>% str_replace_all("[^0-9]", "") %>% as.integer()
+        cw_d$AREAWATER_INT =  as.integer(stringr::str_replace_all(cw_d$AREAWATER_INT, "[^0-9]", ""))
     } else {
         cw_d = readr::read_delim(zip_path, delim = "|", col_types = "cccclddccccdlddcdd", 
                              progress = interactive())
