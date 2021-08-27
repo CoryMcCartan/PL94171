@@ -1,5 +1,6 @@
 # PL94171 1.0.0
 * Tested and updated for the 2020 decennial census release.
+* Fixed a bug in reading pre-2020 crosswalks (thanks to Benjamin Schmidt for identifying and fixing).
 
 # PL94171 0.3.1
 * Fixes URL redirect in README logo.
