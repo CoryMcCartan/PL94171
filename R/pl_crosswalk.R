@@ -10,7 +10,7 @@
 #' @return A tibble, with two sets of GEOIDs and overlap information.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Takes a bit of time to run
 #' pl_crosswalk("RI", 2010, 2020)
 #' }
@@ -44,7 +44,7 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
         names(cw_d)[length(cw_d)] = "AREAWATER_INT"
         cw_d$AREAWATER_INT =  as.integer(stringr::str_replace_all(cw_d$AREAWATER_INT, "[^0-9]", ""))
     } else {
-        cw_d = readr::read_delim(zip_path, delim = "|", col_types = "cccclddccccdlddcdd", 
+        cw_d = readr::read_delim(zip_path, delim = "|", col_types = "cccclddccccdlddcdd",
                              progress = interactive())
     }
     cw_d %>%
