@@ -16,8 +16,10 @@
 #' @return A list of data frames containing the four PL files.
 #'
 #' @examples
+#' \donttest{
 #' pl_ex_path <- system.file('extdata/ri2018_2020Style.pl', package = 'PL94171')
 #' pl <- pl_read(pl_ex_path)
+#' }
 #' # or try `pl_read(pl_url("RI", 2010))`
 #'
 #' @concept basic
