@@ -175,30 +175,31 @@ block geometries.</p>
 <p>Blocks from other states will be ignored.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='va'>crosswalk</span> <span class='op'>=</span> <span class='fu'><a href='pl_crosswalk.html'>pl_crosswalk</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span>, <span class='fl'>2020</span><span class='op'>)</span>
-<span class='va'>RI_2010</span> <span class='op'>=</span> <span class='fu'><a href='pl_tidy_shp.html'>pl_tidy_shp</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fu'><a href='pl_url.html'>pl_url</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span><span class='op'>)</span>, <span class='fl'>2010</span><span class='op'>)</span>
-<span class='fu'>pl_retally</span><span class='op'>(</span><span class='va'>RI_2010</span>, <span class='va'>crosswalk</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 25,649 × 24</span>
-#&gt;    GEOID           state county vtd   area_land area_water   pop pop_hisp pop_white
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> 440010301001000 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>329          0    15        3        13
-#&gt; <span style='color: #BCBCBC;'> 2</span> 440010301001001 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>6</span>001          0     8        0         6
-#&gt; <span style='color: #BCBCBC;'> 3</span> 440010301001002 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>11</span>821          0    17        0        17
-#&gt; <span style='color: #BCBCBC;'> 4</span> 440010301001003 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>049          0    28        0        28
-#&gt; <span style='color: #BCBCBC;'> 5</span> 440010301001004 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>398          0    12        0         9
-#&gt; <span style='color: #BCBCBC;'> 6</span> 440010301001005 RI    Brist… <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>181</span>092          0    93        1        84
-#&gt; <span style='color: #BCBCBC;'> 7</span> 440010301001006 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>17</span>056          0    23        0        23
-#&gt; <span style='color: #BCBCBC;'> 8</span> 440010301001007 RI    Brist… <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>672          0    28        0        28
-#&gt; <span style='color: #BCBCBC;'> 9</span> 440010301001008 RI    Brist… <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>7</span>291          0     9        0         9
-#&gt; <span style='color: #BCBCBC;'>10</span> 440010301001009 RI    Brist… <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>164</span>924          0    70        1        64
-#&gt; <span style='color: #949494;'># … with 25,639 more rows, and 15 more variables: pop_black &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   pop_aian &lt;int&gt;, pop_asian &lt;int&gt;, pop_nhpi &lt;int&gt;, pop_other &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;, vap_white &lt;int&gt;, vap_black &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   vap_aian &lt;int&gt;, vap_asian &lt;int&gt;, vap_nhpi &lt;int&gt;, vap_other &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   vap_two &lt;int&gt;</span></div><div class='input'><span class='co'># }</span>
-
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='va'>crosswalk</span> <span class='op'>=</span> <span class='fu'><a href='pl_crosswalk.html'>pl_crosswalk</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span>, <span class='fl'>2020</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>RI_2010</span> <span class='op'>=</span> <span class='fu'><a href='pl_tidy_shp.html'>pl_tidy_shp</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fu'><a href='pl_url.html'>pl_url</a></span><span class='op'>(</span><span class='st'>"RI"</span>, <span class='fl'>2010</span><span class='op'>)</span>, <span class='fl'>2010</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>pl_retally</span><span class='op'>(</span><span class='va'>RI_2010</span>, <span class='va'>crosswalk</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 25,649 × 24</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    GEOID     state county    vtd   area_land area_water   pop pop_hisp pop_white</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>329          0    15        3        13</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>6</span>001          0     8        0         6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>11</span>821          0    17        0        17</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>049          0    28        0        28</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>5</span>398          0    12        0         9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>181</span>092          0    93        1        84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>17</span>056          0    23        0        23</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>        <span style='text-decoration: underline;'>16</span>672          0    28        0        28</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>         <span style='text-decoration: underline;'>7</span>291          0     9        0         9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 44001030… RI    Bristol … <span style='color: #BB0000;'>NA</span>       <span style='text-decoration: underline;'>164</span>924          0    70        1        64</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 25,639 more rows, and 15 more variables: pop_black &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   pop_aian &lt;int&gt;, pop_asian &lt;int&gt;, pop_nhpi &lt;int&gt;, pop_other &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;, vap_white &lt;int&gt;, vap_black &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   vap_aian &lt;int&gt;, vap_asian &lt;int&gt;, vap_nhpi &lt;int&gt;, vap_other &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   vap_two &lt;int&gt;</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
