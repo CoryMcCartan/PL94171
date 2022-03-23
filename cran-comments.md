@@ -11,10 +11,6 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This resubmission makes three more functions \donttest, as explained below,
-because CRAN Windows machines may occasionally be slow to read in example data,
-creating suprious NOTEs in example data, creating suprious NOTEs.
-
 * Examples are \donttest in manyfunctions because they require
 moderately large files to be downloaded from the Internet, taking more than 5-10
 seconds on average, or because CRAN Windows machines are slow to read in the

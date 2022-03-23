@@ -8,9 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Tools to process legacy format summary redistricting data files
-    produced by the United States Census Bureau pursuant to P.L. 94-171. These
-    files are generally available earlier but are difficult to work with as-is.
+Tools to process legacy format summary redistricting data files produced by the United States Census Bureau pursuant to P.L. 94-171. These files are generally available earlier but are difficult to work with as-is.
 }
 \seealso{
 Useful links:
