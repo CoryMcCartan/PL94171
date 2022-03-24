@@ -118,8 +118,8 @@ pl_retally = function(d_from, crosswalk) {
         select(-.data$GEOID_to) %>%
         group_by(.data$GEOID)
 
-    out = list()
     grp_data = dplyr::group_data(d_from)
+    out = tibble(GEOID = grp_data$GEOID)
     grp_sizes = lengths(grp_data$.rows)
     grp_idx1 = vapply(grp_data$.rows, function(x) x[1], integer(1)) # first index of each group
 
@@ -129,7 +129,6 @@ pl_retally = function(d_from, crosswalk) {
     }
     out$area_land = d_from$area_land[grp_idx1]
     out$area_water = d_from$area_water[grp_idx1]
-    out = dplyr::as_tibble(out)
 
     area_cols = which(names(d_from) %in% c("area_land", "area_water", "int_land"))
     int_cols = which(vapply(d_from, is.integer, logical(1)))
