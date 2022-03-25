@@ -137,7 +137,7 @@ pl_retally = function(d_from, crosswalk) {
     d_int = t(d_from$int_land * as.matrix(d_from[, int_cols, drop=FALSE]))
     d_int = do.call(cbind, lapply(grp_data$.rows, function(idx) {
         as.integer(round(
-            if (length(idx) == 1) d_int[, idx] else rowSums(d_int[, idx])
+            if (length(idx) == 1) d_int[, idx] else rowSums(d_int[, idx, drop=FALSE])
         ))
     }))
     d_int = t(d_int)
@@ -146,7 +146,7 @@ pl_retally = function(d_from, crosswalk) {
     d_dbl = t(d_from$int_land * as.matrix(d_from[, dbl_cols, drop=FALSE]))
     d_dbl = do.call(cbind, lapply(grp_data$.rows, function(idx) {
         as.integer(round(
-            if (length(idx) == 1) d_dbl[, idx] else rowSums(d_dbl[, idx])
+            if (length(idx) == 1) d_dbl[, idx] else rowSums(d_dbl[, idx, drop=FALSE])
         ))
     }))
     d_dbl = t(d_dbl)

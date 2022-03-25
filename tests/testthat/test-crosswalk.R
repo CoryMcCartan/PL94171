@@ -30,8 +30,8 @@ test_that("crosswalks are reaggregated correctly", {
                   pop_to = pop_to[1],
                   int_land = n() / area_from[1],
                   area_land = as.double(area_to[1]),
-                  area_water = 0.0) %>%
-        ungroup()
+                  area_water = 0.0,
+                  .groups="drop")
 
     pop_d_from = select(test_d, GEOID=GEOID_from, pop=pop_from) %>%
         dplyr::distinct()
