@@ -5,4 +5,5 @@ test_that("PL URLs are generated correctly", {
     expect_equal(pl_url("WA", 2010), wa10_url)
     expect_true(httr::HEAD(pl_url("WA", 2000)[3])$all_headers[[1]]$status == 200)
     expect_true(httr::HEAD(pl_url("DC", 2010))$all_headers[[1]]$status == 200)
+    expect_true(httr::HEAD(pl_url("IA", 2020))$all_headers[[1]]$status == 200)
 })
