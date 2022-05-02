@@ -30,7 +30,11 @@ pl_read = function(path, ...) {
             zip_dir = withr::local_tempdir(pattern="pl")
             for (p in path) {
                 zip_path = withr::local_tempfile(pattern="pl", fileext=".zip")
-                download_census(p, zip_path)
+                success = download_census(p, zip_path)
+                if (!success) {
+                    message("Download did not succeed. Try again.")
+                    return(NULL)
+                }
                 utils::unzip(zip_path, exdir=zip_dir)
             }
             path = zip_dir
@@ -39,7 +43,11 @@ pl_read = function(path, ...) {
         }
     } else if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
         zip_path = withr::local_tempfile(pattern="pl", fileext=".zip")
-        download_census(path, zip_path)
+        success = download_census(path, zip_path)
+        if (!success) {
+            message("Download did not succeed. Try again.")
+            return(NULL)
+        }
         zip_dir = file.path(dirname(zip_path), "PL-unzip")
         utils::unzip(zip_path, exdir=zip_dir)
         path = zip_dir

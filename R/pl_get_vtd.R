@@ -28,7 +28,11 @@ pl_get_vtd = function(abbr, cache_to=NULL, refresh=FALSE) {
 
     zip_url = stringr::str_glue("https://www2.census.gov/geo/tiger/TIGER2020PL/LAYER/VTD/2020/tl_2020_{fips}_vtd20.zip")
     zip_path = withr::local_tempfile(fileext = "zip")
-    download_census(zip_url, zip_path)
+    success = download_census(zip_url, zip_path)
+    if (!success) {
+        message("Download did not succeed. Try again.")
+        return(NULL)
+    }
 
     unz_path = file.path(dirname(zip_path), stringr::str_glue("vtd_2020_{fips}"))
 

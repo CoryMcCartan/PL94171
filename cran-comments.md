@@ -4,12 +4,13 @@
 * windows-latest (on gh-actions), R 4.1.0
 * ubuntu 20.04 (on gh-actions), R 4.1.0
 * ubuntu 20.04 (on gh-actions) (devel)
-* Debian Linux (on rhub) (R-patched)
-* Solaris (on rhub) (R-patched)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
+
+* This version adds graceful error handling for internet resources, and in doing
+so addresses errors in the CRAN checks.
 
 * Examples are \donttest in manyfunctions because they require
 moderately large files to be downloaded from the Internet, taking more than 5-10

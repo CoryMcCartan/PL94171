@@ -37,7 +37,12 @@ pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
     }
 
     zip_path = withr::local_tempfile(fileext = "baf")
-    download_census(url = url, path = zip_path)
+    success = download_census(url, zip_path)
+    if (!success) {
+        message("Download did not succeed. Try again.")
+        return(NULL)
+    }
+
     withr::deferred_clear()
     if (yr_2 == "2010") {
         cw_d = readr::read_delim(zip_path, skip = 0, delim = ",", col_types = "cccclddccccdlddcdc")
