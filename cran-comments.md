@@ -1,8 +1,7 @@
 ## Test environments
-* local R installation, R 4.1.0
-* macOS-latest (on gh-actions), R 4.1.0
-* windows-latest (on gh-actions), R 4.1.0
-* ubuntu 20.04 (on gh-actions), R 4.1.0
+* local R installation, MacOS, R 4.2.0
+* windows-latest (on gh-actions), R 4.2.0
+* ubuntu 20.04 (on gh-actions), R 4.2.0
 * ubuntu 20.04 (on gh-actions) (devel)
 
 ## R CMD check results

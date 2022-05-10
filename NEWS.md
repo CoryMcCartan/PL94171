@@ -1,3 +1,6 @@
+# PL94171 1.0.2
+* Updated error messages for network failures
+
 # PL94171 1.0.0
 * Tested and updated for the 2020 decennial census release.
 * Fixed a bug in reading pre-2020 crosswalks (thanks to Benjamin Schmidt for identifying and fixing).
