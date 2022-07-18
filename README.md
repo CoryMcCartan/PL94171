@@ -7,7 +7,6 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/CoryMcCartan/PL94171/workflows/R-CMD-check/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 [![R-CMD-check](https://github.com/CoryMcCartan/PL94171/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions/workflows/R-CMD-check.yaml)
