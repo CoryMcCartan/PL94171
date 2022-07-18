@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
       </span>
     </div>
 
@@ -62,36 +62,47 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pl_tidy_shp</span><span class="op">(</span><span class="va">abbr</span>, <span class="va">path</span>, year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blocks"</span>, <span class="st">"vtds"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pl_tidy_shp</span><span class="op">(</span><span class="va">abbr</span>, <span class="va">path</span>, year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blocks"</span>, <span class="st">"vtds"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>abbr</dt>
 <dd><p>The state to make the shapefile for</p></dd>
+
+
 <dt>path</dt>
 <dd><p>The path to the PL files, as in <code><a href="pl_read.html">pl_read()</a></code></p></dd>
+
+
 <dt>year</dt>
 <dd><p>The year to download the block geography for. Should match the
 year of the PL files.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>If <code>"blocks"</code>, make a Census block shapefile; if <code>"vtds"</code> make a
 VTD shapefile.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>passed on to <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">dplyr::filter()</a></code>; use to subset to a certain county,
 for example.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>an <code>sf</code> object with demographic and shapefile information for the
+    
+
+<p>an <code>sf</code> object with demographic and shapefile information for the
 state.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="va">pl_ex_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/ri2018_2020Style.pl"</span>, package <span class="op">=</span> <span class="st">"PL94171"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">pl_tidy_shp</span><span class="op">(</span><span class="st">"RI"</span>, <span class="va">pl_ex_path</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">pl_ex_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/ri2018_2020Style.pl"</span>, package <span class="op">=</span> <span class="st">"PL94171"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">pl_tidy_shp</span><span class="op">(</span><span class="st">"RI"</span>, <span class="va">pl_ex_path</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 569 features and 24 fields (with 86 geometries empty)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
@@ -115,8 +126,8 @@ state.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   vap_black &lt;int&gt;, vap_aian &lt;int&gt;, vap_asian &lt;int&gt;, vap_nhpi &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   vap_other &lt;int&gt;, vap_two &lt;int&gt;, area_land &lt;dbl&gt;, area_water &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   geometry &lt;MULTIPOLYGON [°]&gt;</span></span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -131,7 +142,7 @@ state.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

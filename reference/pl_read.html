@@ -25,7 +25,7 @@ names and types."><meta property="og:image" content="https://corymccartan.github
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
       </span>
     </div>
 
@@ -66,9 +66,9 @@ names and types.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pl_read</span><span class="op">(</span><span class="va">path</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">read_pl</span><span class="op">(</span><span class="va">path</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pl_read</span><span class="op">(</span><span class="va">path</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">read_pl</span><span class="op">(</span><span class="va">path</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -76,22 +76,27 @@ names and types.</p>
     <dl><dt>path</dt>
 <dd><p>a path to a folder containing PL files. Can also be path or a URL
 for a ZIP file, which will be downloaded and unzipped.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>passed on to <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">readr::read_delim()</a></code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A list of data frames containing the four PL files.</p>
+    
+
+<p>A list of data frames containing the four PL files.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="va">pl_ex_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">'extdata/ri2018_2020Style.pl'</span>, package <span class="op">=</span> <span class="st">'PL94171'</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu">pl_read</span><span class="op">(</span><span class="va">pl_ex_path</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"><span class="co"># or try `pl_read(pl_url("RI", 2010))`</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">pl_ex_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">'extdata/ri2018_2020Style.pl'</span>, package <span class="op">=</span> <span class="st">'PL94171'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu">pl_read</span><span class="op">(</span><span class="va">pl_ex_path</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># or try `pl_read(pl_url("RI", 2010))`</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -106,7 +111,7 @@ for a ZIP file, which will be downloaded and unzipped.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

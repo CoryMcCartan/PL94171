@@ -1,9 +1,9 @@
-pandoc: 2.7.3
-pkgdown: 2.0.2
+pandoc: 2.14.2
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   PL94171: PL94171.html
-last_built: 2022-03-25T05:29Z
+last_built: 2022-07-18T22:05Z
 urls:
   reference: https://corymccartan.github.io/PL94171/reference
   article: https://corymccartan.github.io/PL94171/articles

@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
       </span>
     </div>
 
@@ -71,19 +71,24 @@
 </ul></div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pl_subset</span><span class="op">(</span><span class="va">pl</span>, sumlev <span class="op">=</span> <span class="st">"750"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pl_subset</span><span class="op">(</span><span class="va">pl</span>, sumlev <span class="op">=</span> <span class="st">"750"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>pl</dt>
 <dd><p>A list of PL tables, as read in by <code><a href="pl_read.html">pl_read()</a></code></p></dd>
+
+
 <dt>sumlev</dt>
 <dd><p>the summary level to filter to. A 3 character SUMLEV code. Default is '750' for blocks.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>tibble</p>
+    
+
+<p>tibble</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -92,11 +97,11 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="va">pl_ex_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">'extdata/ri2018_2020Style.pl'</span>, package <span class="op">=</span> <span class="st">'PL94171'</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="pl_read.html">pl_read</a></span><span class="op">(</span><span class="va">pl_ex_path</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu">pl_subset</span><span class="op">(</span><span class="va">pl</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># }</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">pl_ex_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">'extdata/ri2018_2020Style.pl'</span>, package <span class="op">=</span> <span class="st">'PL94171'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="pl_read.html">pl_read</a></span><span class="op">(</span><span class="va">pl_ex_path</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu">pl_subset</span><span class="op">(</span><span class="va">pl</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -111,7 +116,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

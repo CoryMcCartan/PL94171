@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
       </span>
     </div>
 
@@ -62,28 +62,33 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pl_url</span><span class="op">(</span><span class="va">abbr</span>, year <span class="op">=</span> <span class="fl">2010</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pl_url</span><span class="op">(</span><span class="va">abbr</span>, year <span class="op">=</span> <span class="fl">2010</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>abbr</dt>
 <dd><p>The state to download the PL files for</p></dd>
+
+
 <dt>year</dt>
 <dd><p>The year of PL file to download. Supported years: 2000, 2010,
 2020 (after release). 2000 files are in a different format.
 Earlier years available on tape or CD-ROM only.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>a character vector containing the URL to a ZIP containing the PL files.</p>
+    
+
+<p>a character vector containing the URL to a ZIP containing the PL files.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">pl_url</span><span class="op">(</span><span class="st">"RI"</span>, <span class="fl">2010</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pl_url</span><span class="op">(</span><span class="st">"RI"</span>, <span class="fl">2010</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://www2.census.gov/census_2010/01-Redistricting_File--PL_94-171/Rhode_Island/ri2010.pl.zip"</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -98,7 +103,7 @@ Earlier years available on tape or CD-ROM only.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

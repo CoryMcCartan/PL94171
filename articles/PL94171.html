@@ -46,7 +46,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
       </span>
     </div>
 
@@ -79,7 +79,7 @@
 
       
 
-      </header><script src="PL94171_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Reading Legacy Census Redistricting Data</h1>
@@ -115,81 +115,81 @@
 <h2 id="using-the-pl94171-package">Using the <code>PL94171</code> package<a class="anchor" aria-label="anchor" href="#using-the-pl94171-package"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://corymccartan.github.io/PL94171/">PL94171</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://corymccartan.github.io/PL94171/">PL94171</a></span><span class="op">)</span></span></code></pre></div>
 <p>The four components of the P.L. 94-171 file should be downloaded into their own directory. Here, we’ll use the example data included in the package, from the 2018 end-to-end Census test in Providence County, Rhode Island, and read it into our R session. In general, you can provide a URL in place of a file path, and the package will read the data from the URL. The <code><a href="../reference/pl_url.html">pl_url()</a></code> function will automatically construct the URL to the data for a given state and year.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># `extdata/ri2018_2020Style.pl` is a directory with the four P.L. 94-171 files</span>
-<span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/ri2018_2020Style.pl"</span>, package <span class="op">=</span> <span class="st">"PL94171"</span><span class="op">)</span>
-<span class="va">pl_raw</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pl_read.html">pl_read</a></span><span class="op">(</span><span class="va">path</span><span class="op">)</span>
-<span class="co"># try `pl_read(pl_url("RI", 2010))`</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># `extdata/ri2018_2020Style.pl` is a directory with the four P.L. 94-171 files</span></span>
+<span><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/ri2018_2020Style.pl"</span>, package <span class="op">=</span> <span class="st">"PL94171"</span><span class="op">)</span></span>
+<span><span class="va">pl_raw</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pl_read.html">pl_read</a></span><span class="op">(</span><span class="va">path</span><span class="op">)</span></span>
+<span><span class="co"># try `pl_read(pl_url("RI", 2010))`</span></span></code></pre></div>
 <p>This creates a large list where each individual P.L. 94-171 file component is a separate entry in the list. If we look at the top of one of these entries, we see the same structure as in the schematic above: each redistricting variable is a column, the rows are indexed by <code>LOGRECNO</code>, and various levels of aggregation are all included as different sets of rows in the same table (notice the countywide population counts in the first two rows).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pl_raw</span><span class="op">$</span><span class="va">`00003`</span><span class="op">)</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 15</span></span>
-<span class="co">#&gt;   FILEID STUSAB CHARITER CIFSN LOGRECNO P0050001 P0050002 P0050003 P0050004</span>
-<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> PLST   RI     000      03           1    <span style="text-decoration: underline;">15</span>766     <span style="text-decoration: underline;">7</span>311     <span style="text-decoration: underline;">3</span>266      261</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> PLST   RI     000      03           2    <span style="text-decoration: underline;">15</span>766     <span style="text-decoration: underline;">7</span>311     <span style="text-decoration: underline;">3</span>266      261</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> PLST   RI     000      03          19      732        0        0        0</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> PLST   RI     000      03          20        0        0        0        0</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">5</span> PLST   RI     000      03          21        1        0        0        0</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">6</span> PLST   RI     000      03          22        1        1        0        0</span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 6 more variables: P0050005 &lt;int&gt;, P0050006 &lt;int&gt;, P0050007 &lt;int&gt;,</span></span>
-<span class="co">#&gt; <span style="color: #949494;">#   P0050008 &lt;int&gt;, P0050009 &lt;int&gt;, P0050010 &lt;int&gt;</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pl_raw</span><span class="op">$</span><span class="va">`00003`</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 15</span></span></span>
+<span><span class="co">#&gt;   FILEID STUSAB CHARITER CIFSN LOGRECNO P0050001 P0050002 P0050003 P0050004</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> PLST   RI     000      03           1    <span style="text-decoration: underline;">15</span>766     <span style="text-decoration: underline;">7</span>311     <span style="text-decoration: underline;">3</span>266      261</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> PLST   RI     000      03           2    <span style="text-decoration: underline;">15</span>766     <span style="text-decoration: underline;">7</span>311     <span style="text-decoration: underline;">3</span>266      261</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> PLST   RI     000      03          19      732        0        0        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> PLST   RI     000      03          20        0        0        0        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> PLST   RI     000      03          21        1        0        0        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> PLST   RI     000      03          22        1        1        0        0</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 6 more variables: P0050005 &lt;int&gt;, P0050006 &lt;int&gt;, P0050007 &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   P0050008 &lt;int&gt;, P0050009 &lt;int&gt;, P0050010 &lt;int&gt;</span></span></span></code></pre></div>
 <p>To subset to a desired geography level, we must first identify the corresponding <code>SUMLEV</code> code.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">pl_geog_levels</span><span class="op">)</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 85 × 2</span></span>
-<span class="co">#&gt;    SUMLEV SUMLEV_description                                     </span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                  </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 040    State                                                  </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 050    State-County                                           </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 060    State-County-County Subdivision                        </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 067    State-County-County Subdivision-Subminor Civil Division</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 140    State-County-Census Tract                              </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 150    State-County-Census Tract-Block Group                  </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 155    State-Place-County                                     </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 160    State-Place                                            </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 170    State-Consolidated City                                </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 172    State-Consolidated City-Place within Consolidated City </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 75 more rows</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">pl_geog_levels</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 85 × 2</span></span></span>
+<span><span class="co">#&gt;    SUMLEV SUMLEV_description                                     </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 040    State                                                  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 050    State-County                                           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 060    State-County-County Subdivision                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 067    State-County-County Subdivision-Subminor Civil Division</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 140    State-County-Census Tract                              </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 150    State-County-Census Tract-Block Group                  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 155    State-Place-County                                     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 160    State-Place                                            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 170    State-Consolidated City                                </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 172    State-Consolidated City-Place within Consolidated City </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 75 more rows</span></span></span></code></pre></div>
 <p>Here, we’ll look at Census tracts, which are <code>SUMLEV=140</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pl_subset.html">pl_subset</a></span><span class="op">(</span><span class="va">pl_raw</span>, sumlev<span class="op">=</span><span class="st">"140"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">pl</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1]   7 397</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pl_subset.html">pl_subset</a></span><span class="op">(</span><span class="va">pl_raw</span>, sumlev<span class="op">=</span><span class="st">"140"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">pl</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]   7 397</span></span></code></pre></div>
 <p>We see that all four components have been combined into one large table, with data for each of the seven Census tracts in the example file recorded in a single row. To extract <a href="../reference/pl_select_standard.html">commonly-used variables</a> from the 397 columns, we can run the following:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pl_select_standard.html">pl_select_standard</a></span><span class="op">(</span><span class="va">pl</span>, clean_names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">pl</span><span class="op">)</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 24</span></span>
-<span class="co">#&gt;   GEOID       state county row_id summary_level vtd     pop pop_hisp pop_white</span>
-<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 44007000101 RI    007        19 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">3</span>970     <span style="text-decoration: underline;">1</span>442      <span style="text-decoration: underline;">1</span>445</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 44007000102 RI    007        20 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">4</span>735     <span style="text-decoration: underline;">2</span>555       815</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 44007000200 RI    007        21 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">5</span>703     <span style="text-decoration: underline;">3</span>766       570</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 44007000300 RI    007        22 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">6</span>647     <span style="text-decoration: underline;">3</span>827       754</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 44007000400 RI    007        23 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">3</span>433     <span style="text-decoration: underline;">2</span>130       142</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 44007000500 RI    007        24 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">2</span>940     <span style="text-decoration: underline;">2</span>249        39</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">7</span> 44007000600 RI    007        25 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">1</span>797      778       170</span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 15 more variables: pop_black &lt;int&gt;, pop_aian &lt;int&gt;, pop_asian &lt;int&gt;,</span></span>
-<span class="co">#&gt; <span style="color: #949494;">#   pop_nhpi &lt;int&gt;, pop_other &lt;int&gt;, pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;,</span></span>
-<span class="co">#&gt; <span style="color: #949494;">#   vap_white &lt;int&gt;, vap_black &lt;int&gt;, vap_aian &lt;int&gt;, vap_asian &lt;int&gt;,</span></span>
-<span class="co">#&gt; <span style="color: #949494;">#   vap_nhpi &lt;int&gt;, vap_other &lt;int&gt;, vap_two &lt;int&gt;</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">pl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pl_select_standard.html">pl_select_standard</a></span><span class="op">(</span><span class="va">pl</span>, clean_names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">pl</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 24</span></span></span>
+<span><span class="co">#&gt;   GEOID       state county row_id summary_level vtd     pop pop_hisp pop_white</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 44007000101 RI    007        19 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">3</span>970     <span style="text-decoration: underline;">1</span>442      <span style="text-decoration: underline;">1</span>445</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 44007000102 RI    007        20 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">4</span>735     <span style="text-decoration: underline;">2</span>555       815</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 44007000200 RI    007        21 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">5</span>703     <span style="text-decoration: underline;">3</span>766       570</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 44007000300 RI    007        22 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">6</span>647     <span style="text-decoration: underline;">3</span>827       754</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 44007000400 RI    007        23 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">3</span>433     <span style="text-decoration: underline;">2</span>130       142</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 44007000500 RI    007        24 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">2</span>940     <span style="text-decoration: underline;">2</span>249        39</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> 44007000600 RI    007        25 140           <span style="color: #BB0000;">NA</span>     <span style="text-decoration: underline;">1</span>797      778       170</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 15 more variables: pop_black &lt;int&gt;, pop_aian &lt;int&gt;, pop_asian &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   pop_nhpi &lt;int&gt;, pop_other &lt;int&gt;, pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   vap_white &lt;int&gt;, vap_black &lt;int&gt;, vap_aian &lt;int&gt;, vap_asian &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   vap_nhpi &lt;int&gt;, vap_other &lt;int&gt;, vap_two &lt;int&gt;</span></span></span></code></pre></div>
 <p>Above, we set <code>clean_names = TRUE</code>, which is the default. This creates a set of variables familiar to the <code>redist</code> family of packages.</p>
 <p>To combine these data with a shapefile, we must use the <code>tigris</code> package. The <code>GEOID</code> column is shared between the P.L. 94-171 data and the TIGER shapefiles from <code>tigris</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/walkerke/tigris" class="external-link">tigris</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
-
-<span class="va">ri_tracts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tigris/man/tracts.html" class="external-link">tracts</a></span><span class="op">(</span><span class="st">"RI"</span>, county<span class="op">=</span><span class="st">"Providence"</span>, year<span class="op">=</span><span class="fl">2020</span>, progress_bar<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">full_join</a></span><span class="op">(</span><span class="va">pl</span>, <span class="va">ri_tracts</span>, by<span class="op">=</span><span class="st">"GEOID"</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/tigris/man/tigris-exports.html" class="external-link">%&gt;%</a></span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">pop</span>, geometry<span class="op">=</span><span class="va">geometry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/walkerke/tigris" class="external-link">tigris</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ri_tracts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tigris/man/tracts.html" class="external-link">tracts</a></span><span class="op">(</span><span class="st">"RI"</span>, county<span class="op">=</span><span class="st">"Providence"</span>, year<span class="op">=</span><span class="fl">2020</span>, progress_bar<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">full_join</a></span><span class="op">(</span><span class="va">pl</span>, <span class="va">ri_tracts</span>, by<span class="op">=</span><span class="st">"GEOID"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">pop</span>, geometry<span class="op">=</span><span class="va">geometry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="PL94171_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 </div>
   </div>
@@ -211,7 +211,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
