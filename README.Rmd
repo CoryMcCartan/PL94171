@@ -13,15 +13,15 @@ knitr::opts_chunk$set(
 )
 ```
 
-# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.github.io/PL94171/'><img src='man/figures/logo.png' align="right" height="320" style="padding: 12px" /></a>
+# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.github.io/PL94171/'><img src='man/figures/logo.png' align="right" height="300" style="padding: 12px; height: 300px;" /></a>
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/CoryMcCartan/PL94171/workflows/R-CMD-check/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions)
-
 [![CRAN status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
+[![R-CMD-check](https://github.com/CoryMcCartan/PL94171/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The **PL94171** package contains tools to process legacy format summary
