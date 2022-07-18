@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.github.io/PL94171/'><img src='man/figures/logo.png' align="right" height="320" style="padding: 12px" /></a>
+# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.github.io/PL94171/'><img src='man/figures/logo.png' align="right" height="320" style="padding: 12px; height: 320px" /></a>
 
 <!-- badges: start -->
 
