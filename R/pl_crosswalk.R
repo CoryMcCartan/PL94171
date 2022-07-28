@@ -146,7 +146,7 @@ pl_retally = function(d_from, crosswalk) {
         ))
     }))
     d_int = t(d_int)
-    colnames(d_int) = names(int_cols)
+    colnames(d_int) = names(d_from)[int_cols]
 
     d_dbl = t(d_from$int_land * as.matrix(d_from[, dbl_cols, drop=FALSE]))
     d_dbl = do.call(cbind, lapply(grp_data$.rows, function(idx) {
@@ -155,7 +155,7 @@ pl_retally = function(d_from, crosswalk) {
         ))
     }))
     d_dbl = t(d_dbl)
-    colnames(d_dbl) = names(dbl_cols)
+    colnames(d_dbl) = names(d_from)[dbl_cols]
 
     dplyr::bind_cols(out, d_int, d_dbl)
 }
