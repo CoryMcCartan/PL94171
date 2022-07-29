@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   PL94171: PL94171.html
-last_built: 2022-07-18T22:05Z
+last_built: 2022-07-29T15:49Z
 urls:
   reference: https://corymccartan.github.io/PL94171/reference
   article: https://corymccartan.github.io/PL94171/articles
