@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+options(tinytiger.curl_quiet=TRUE)
 ```
 
 The US Census Bureau releases redistricting data (P.L. 94-171) following the decennial census. This article walks through the basics of reading that data and getting it into working form.
@@ -114,12 +115,12 @@ The `GEOID` column is shared between the P.L. 94-171 data and the TIGER
 shapefiles from `tigris`.
 
 ```{r message=F, warning=F}
-library(tigris)
+library(tinytiger)
 library(sf)
 library(dplyr)
 library(ggplot2)
 
-ri_tracts = tracts("RI", county="Providence", year=2020, progress_bar=FALSE)
+ri_tracts = tt_tracts("RI", county="Providence", year=2020)
 
 full_join(pl, ri_tracts, by="GEOID") %>%
 ggplot(aes(fill=pop, geometry=geometry)) +

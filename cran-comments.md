@@ -8,8 +8,8 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This version adds graceful error handling for internet resources, and in doing
-so addresses errors in the CRAN checks.
+* This version addresses existing NOTEs regarding invalid HTML5 and also updates
+new package URLs.
 
 * Examples are \donttest in manyfunctions because they require
 moderately large files to be downloaded from the Internet, taking more than 5-10

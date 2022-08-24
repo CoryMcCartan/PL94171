@@ -35,7 +35,7 @@ An \code{sf} object containing the blocks.
 These prototype shapefiles correspond to the Rhode Island end-to-end Census
 test and the accompanying prototype P.L. 94-171 data. This function is
 unlikely to be useful for working with any actual decennial Census data.
-The corresponding \code{tigris} functions should be used instead.
+The corresponding \code{tinytiger} or \code{tigris} functions should be used instead.
 }
 \details{
 Current acceptable arguments to geog include:

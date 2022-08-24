@@ -18,7 +18,7 @@
 #' @concept advanced
 #' @export
 pl_crosswalk = function(abbr, from_year=2010L, to_year=from_year + 10L) {
-    fips = tigris::fips_codes$state_code[match(abbr, tigris::fips_codes$state)]
+    fips = match_fips(abbr)
     if (isTRUE(all.equal(to_year, from_year)) ||
             abs(to_year - from_year) > 10+1e-6) {
         stop("`to` and `from` years must be a decade apart.")
@@ -96,7 +96,7 @@ is_const_rel = function(x) {
 #'
 #' @return A new data frame, like `d_from`, except with the geometry column
 #'   dropped, if one exists. New geometry should be loaded, perhaps with
-#'   [tigris::blocks()].
+#'   [tinytiger::tt_blocks()].
 #'
 #' @examples \donttest{
 #' crosswalk = pl_crosswalk("RI", 2010, 2020)

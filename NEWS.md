@@ -1,3 +1,7 @@
+# PL94171 1.1.0
+* Replace `tigris` with `tinytiger` for geometry downloads to reduce total package dependencies.
+* Updated URLs and updated package documentation to be HTML5 compliant.
+
 # PL94171 1.0.2
 * Updated error messages for network failures
 

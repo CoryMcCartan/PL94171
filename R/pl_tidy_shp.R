@@ -29,12 +29,12 @@
 pl_tidy_shp = function(abbr, path, year=2020, type=c("blocks", "vtds"), ...) {
     type = match.arg(type)
     if (type == "blocks") {
-        units = tigris::blocks(abbr, year=year, progress_bar=interactive())
+        units = tinytiger::tt_blocks(abbr, year=year)
     } else if (type == "vtds") {
         if (year == 2020) {
             units = pl_get_vtd(abbr)
         } else if (year == 2010L) {
-            units = tigris::voting_districts(abbr, progress_bar=interactive())
+            units = tinytiger::tt_voting_districts(abbr)
         } else {
             stop("VTDs not supported for years prior to 2010")
         }
@@ -49,9 +49,11 @@ pl_tidy_shp = function(abbr, path, year=2020, type=c("blocks", "vtds"), ...) {
                area_land=starts_with("ALAND"),
                area_water=starts_with("AWATER"),
                .data$geometry) %>%
-       left_join(tigris::fips_codes, by=c("state_code", "county_code")) %>%
-       select(.data$GEOID, .data$state, .data$county,
-              .data$area_land, .data$area_water, .data$geometry)
+        left_join(tinytiger::county_fips_2020, by=c("state_code"="state", "county_code"="county")) %>%
+        rename(county = .data$name) %>%
+        left_join(st, by=c("state_code"="fips")) %>%
+        select(.data$GEOID, state=.data$name, .data$county,
+               .data$area_land, .data$area_water, .data$geometry)
 
     pl = read_pl(path) %>%
         pl_widen() %>%

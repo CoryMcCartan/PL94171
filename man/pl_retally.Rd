@@ -16,7 +16,7 @@ Character columns will be preserved if constant across new block geometries.}
 \value{
 A new data frame, like \code{d_from}, except with the geometry column
 dropped, if one exists. New geometry should be loaded, perhaps with
-\code{\link[tigris:blocks]{tigris::blocks()}}.
+\code{\link[tinytiger:tt_blocks]{tinytiger::tt_blocks()}}.
 }
 \description{
 Applies a block crosswalk to a table of block data using areal interpolation.

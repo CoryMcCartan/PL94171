@@ -114,7 +114,7 @@ read_pl = pl_read
 #' @concept basic
 #' @export
 pl_url = function(abbr, year=2010) {
-    name = tigris::fips_codes$state_name[match(abbr, tigris::fips_codes$state)]
+    name = match_name(abbr)
     name = stringr::str_replace_all(name, " ", "_")
     if (year == 2000) {
         url = str_glue("https://www2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/",

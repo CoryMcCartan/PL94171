@@ -23,8 +23,7 @@ pl_get_vtd = function(abbr, cache_to=NULL, refresh=FALSE) {
         return(readRDS(cache_to))
     }
 
-    fips = tigris::fips_codes$state_code[match(abbr, tigris::fips_codes$state)]
-    stopifnot(!is.na(fips))
+    fips = match_fips(abbr)
 
     zip_url = stringr::str_glue("https://www2.census.gov/geo/tiger/TIGER2020PL/LAYER/VTD/2020/tl_2020_{fips}_vtd20.zip")
     zip_path = withr::local_tempfile(fileext = "zip")

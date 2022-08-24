@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.github.io/PL94171/'><img src='man/figures/logo.png' align="right" height="300" style="padding: 12px; height: 300px;" /></a>
+# **PL94171**: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href='https://corymccartan.com/PL94171/'><img src='man/figures/logo.png' align="right" height="300" style="padding: 12px; height: 300px;" /></a>
 
 <!-- badges: start -->
 
@@ -56,4 +56,4 @@ pl_tidy_shp("RI", pl_path)
 ```
 
 To tabulate at different geographies, or to extract other variables, check out
-the [Getting Started page](https://corymccartan.github.io/PL94171/articles/PL94171.html).
+the [Getting Started page](https://corymccartan.com/PL94171/articles/PL94171.html).
