@@ -12,3 +12,4 @@
 ^Meta$
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
+^revdep$

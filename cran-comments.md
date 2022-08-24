@@ -13,6 +13,8 @@
 * This version addresses existing NOTEs regarding invalid HTML5 and also updates
 new package URLs.
 
+* 1 reverse depdendency (wru) was checked and there were no ERRORs, WARNINGs, or NOTEs.
+
 * Examples are \donttest in many functions because they require
 moderately large files to be downloaded from the Internet, taking more than 5-10
 seconds on average, or because CRAN Windows machines are slow to read in the
