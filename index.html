@@ -21,7 +21,7 @@
 <meta property="og:description" content="Tools to process legacy format summary redistricting data files
     produced by the United States Census Bureau pursuant to P.L. 94-171. These
     files are generally available earlier but are difficult to work with as-is.">
-<meta property="og:image" content="https://corymccartan.github.io/PL94171/logo.png">
+<meta property="og:image" content="https://corymccartan.com/PL94171/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -48,7 +48,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">PL94171</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
   <div class="contents col-md-9">
 <div class="section level1">
 <div class="page-header"><h1 id="pl94171-tabulate-pl-94-171-redistricting-data-summary-files-">
-<strong>PL94171</strong>: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href="https://corymccartan.github.io/PL94171/"><img src="reference/figures/logo.png" align="right" height="300" style="padding: 12px; height: 300px;"></a>
+<strong>PL94171</strong>: Tabulate P.L. 94-171 Redistricting Data Summary Files <a href="https://corymccartan.com/PL94171/"><img src="reference/figures/logo.png" align="right" height="300" style="padding: 12px; height: 300px;"></a>
 <a class="anchor" aria-label="anchor" href="#pl94171-tabulate-pl-94-171-redistricting-data-summary-files-"></a>
 </h1></div>
 <!-- badges: start -->
@@ -106,34 +106,36 @@
 </h2>
 <p>Just need block- or precinct-level data for total and voting-age population by race? Then <code><a href="reference/pl_tidy_shp.html">pl_tidy_shp()</a></code> is all you need.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://corymccartan.github.io/PL94171/">PL94171</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://corymccartan.com/PL94171/">PL94171</a></span><span class="op">)</span></span>
 <span><span class="co"># put the path to the PL 94-171 files here, or use `pl_url()` to download them</span></span>
 <span><span class="va">pl_path</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/ri2018_2020Style.pl"</span>, package<span class="op">=</span><span class="st">"PL94171"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pl_tidy_shp.html">pl_tidy_shp</a></span><span class="op">(</span><span class="st">"RI"</span>, <span class="va">pl_path</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Simple feature collection with 569 features and 24 fields (with 86 geometries empty)</span></span>
-<span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
+<span><span class="co">#&gt; Simple feature collection with 569 features and 24 fields (with 569 geometries empty)</span></span>
+<span><span class="co">#&gt; Geometry type: GEOMETRY</span></span>
 <span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: -71.42641 ymin: 41.77238 xmax: -71.36969 ymax: 41.82</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: NA ymin: NA xmax: NA ymax: NA</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  NAD83</span></span>
 <span><span class="co">#&gt; # A tibble: 569 × 25</span></span>
-<span><span class="co">#&gt;    GEOID          state county vtd     pop pop_hisp pop_white pop_black pop_aian</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;    &lt;int&gt;     &lt;int&gt;     &lt;int&gt;    &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1 4400700010110… RI    Provi… 4428…     0        0         0         0        0</span></span>
-<span><span class="co">#&gt;  2 4400700010110… RI    Provi… 4428…     0        0         0         0        0</span></span>
-<span><span class="co">#&gt;  3 4400700010110… RI    Provi… 4428…     0        0         0         0        0</span></span>
-<span><span class="co">#&gt;  4 4400700010110… RI    Provi… 4428…    50        0        50         0        0</span></span>
-<span><span class="co">#&gt;  5 4400700010110… RI    Provi… 4428…     0        0         0         0        0</span></span>
-<span><span class="co">#&gt;  6 4400700010110… RI    Provi… 4428…     0        0         0         0        0</span></span>
-<span><span class="co">#&gt;  7 4400700010110… RI    Provi… 4428…    18       18         0         0        0</span></span>
-<span><span class="co">#&gt;  8 4400700010110… RI    Provi… 4428…     0        0         0         0        0</span></span>
-<span><span class="co">#&gt;  9 4400700010110… RI    Provi… 4428…    86       86         0         0        0</span></span>
-<span><span class="co">#&gt; 10 4400700010110… RI    Provi… 4428…    19        0         0        19        0</span></span>
-<span><span class="co">#&gt; # … with 559 more rows, and 16 more variables: pop_asian &lt;int&gt;, pop_nhpi &lt;int&gt;,</span></span>
-<span><span class="co">#&gt; #   pop_other &lt;int&gt;, pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;, vap_white &lt;int&gt;,</span></span>
-<span><span class="co">#&gt; #   vap_black &lt;int&gt;, vap_aian &lt;int&gt;, vap_asian &lt;int&gt;, vap_nhpi &lt;int&gt;,</span></span>
-<span><span class="co">#&gt; #   vap_other &lt;int&gt;, vap_two &lt;int&gt;, area_land &lt;dbl&gt;, area_water &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   geometry &lt;MULTIPOLYGON [°]&gt;</span></span></code></pre></div>
-<p>To tabulate at different geographies, or to extract other variables, check out the <a href="https://corymccartan.github.io/PL94171/articles/PL94171.html">Getting Started page</a>.</p>
+<span><span class="co">#&gt;    GEOID        state county vtd     pop pop_h…¹ pop_w…² pop_b…³ pop_a…⁴ pop_a…⁵</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1 44007000101… RI    &lt;NA&gt;   4428…     0       0       0       0       0       0</span></span>
+<span><span class="co">#&gt;  2 44007000101… RI    &lt;NA&gt;   4428…     0       0       0       0       0       0</span></span>
+<span><span class="co">#&gt;  3 44007000101… RI    &lt;NA&gt;   4428…     0       0       0       0       0       0</span></span>
+<span><span class="co">#&gt;  4 44007000101… RI    &lt;NA&gt;   4428…    50       0      50       0       0       0</span></span>
+<span><span class="co">#&gt;  5 44007000101… RI    &lt;NA&gt;   4428…     0       0       0       0       0       0</span></span>
+<span><span class="co">#&gt;  6 44007000101… RI    &lt;NA&gt;   4428…     0       0       0       0       0       0</span></span>
+<span><span class="co">#&gt;  7 44007000101… RI    &lt;NA&gt;   4428…    18      18       0       0       0       0</span></span>
+<span><span class="co">#&gt;  8 44007000101… RI    &lt;NA&gt;   4428…     0       0       0       0       0       0</span></span>
+<span><span class="co">#&gt;  9 44007000101… RI    &lt;NA&gt;   4428…    86      86       0       0       0       0</span></span>
+<span><span class="co">#&gt; 10 44007000101… RI    &lt;NA&gt;   4428…    19       0       0      19       0       0</span></span>
+<span><span class="co">#&gt; # … with 559 more rows, 15 more variables: pop_nhpi &lt;int&gt;, pop_other &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   pop_two &lt;int&gt;, vap &lt;int&gt;, vap_hisp &lt;int&gt;, vap_white &lt;int&gt;, vap_black &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   vap_aian &lt;int&gt;, vap_asian &lt;int&gt;, vap_nhpi &lt;int&gt;, vap_other &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   vap_two &lt;int&gt;, area_land &lt;dbl&gt;, area_water &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   geometry &lt;GEOMETRYCOLLECTION [°]&gt;, and abbreviated variable names</span></span>
+<span><span class="co">#&gt; #   ¹​pop_hisp, ²​pop_white, ³​pop_black, ⁴​pop_aian, ⁵​pop_asian</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</span></span></code></pre></div>
+<p>To tabulate at different geographies, or to extract other variables, check out the <a href="https://corymccartan.com/PL94171/articles/PL94171.html">Getting Started page</a>.</p>
 </div>
 </div>
   </div>
