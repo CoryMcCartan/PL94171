@@ -1,7 +1,7 @@
 Package: PL94171
 Type: Package
 Title: Tabulate P.L. 94-171 Redistricting Data Summary Files
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: c(
     person("Cory", "McCartan", email = "cmccartan@g.harvard.edu", role = c("aut", "cre")),
     person("Christopher T.", "Kenny", email = "christopherkenny@fas.harvard.edu", role = "aut"))
@@ -31,7 +31,7 @@ LazyData: true
 RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 URL: https://corymccartan.com/PL94171/,
-    https://github.com/CoryMcCartan/PL94171/,
+    https://github.com/CoryMcCartan/PL94171/
 BugReports: https://github.com/CoryMcCartan/PL94171/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr

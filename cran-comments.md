@@ -1,3 +1,8 @@
+## Resubmission
+
+In this resubmission, I have removed a trailing comma from the URL field in the
+DESCRIPTION.
+
 ## Test environments
 * local R installation, MacOS, R 4.2.0
 * macos-latest (on gh-actions), R 4.2.0
