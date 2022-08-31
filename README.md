@@ -10,6 +10,7 @@ experimental](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://
 [![CRAN
 status](https://www.r-pkg.org/badges/version/PL94171)](https://CRAN.R-project.org/package=PL94171)
 [![R-CMD-check](https://github.com/CoryMcCartan/PL94171/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CoryMcCartan/PL94171/actions/workflows/R-CMD-check.yaml)
+![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/PL94171)
 <!-- badges: end -->
 
 The **PL94171** package contains tools to process legacy format summary
@@ -67,7 +68,6 @@ pl_tidy_shp("RI", pl_path)
 #> #   vap_two <int>, area_land <dbl>, area_water <dbl>,
 #> #   geometry <GEOMETRYCOLLECTION [°]>, and abbreviated variable names
 #> #   ¹​pop_hisp, ²​pop_white, ³​pop_black, ⁴​pop_aian, ⁵​pop_asian
-#> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 To tabulate at different geographies, or to extract other variables,
