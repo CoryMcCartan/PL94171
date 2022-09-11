@@ -131,7 +131,9 @@ library(ggplot2)
 with_retry <- function(fn, ..., max_iter = 5) {
     out <- NULL
     i <- 1
+    try({out <- fn(...)}, silent = TRUE)
     while (i <= max_iter && is.null(out)) {
+        Sys.sleep(0.5)
         try({out <- fn(...)}, silent = TRUE)
         i <- i + 1
     } 
