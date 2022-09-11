@@ -110,18 +110,39 @@ print(pl)
 Above, we set `clean_names = TRUE`, which is the default. This creates a set of
 variables familiar to the `redist` family of packages.
 
-To combine these data with a shapefile, we must use the `tigris` package.
+To combine these data with a shapefile, we must use the `tinytiger` package.
 The `GEOID` column is shared between the P.L. 94-171 data and the TIGER
-shapefiles from `tigris`.
+shapefiles from `tinytiger`.
 
-```{r message=F, warning=F}
+```{r message=F, warning=F, eval = FALSE}
 library(tinytiger)
 library(sf)
 library(dplyr)
 library(ggplot2)
 
 ri_tracts = tt_tracts("RI", county="Providence", year=2020)
+```
 
+```{r, echo = FALSE}
+library(tinytiger)
+library(sf)
+library(dplyr)
+library(ggplot2)
+with_retry <- function(fn, ..., max_iter = 5) {
+    out <- NULL
+    i <- 1
+    while (i <= max_iter && is.null(out)) {
+        try({out <- fn(...)}, silent = TRUE)
+        i <- i + 1
+    } 
+    out
+}
+
+ri_tracts = with_retry(fn = tt_tracts, state = "RI", county = "Providence", year = 2020)
+```
+
+Then we can join the shapes and data
+```{r, eval = !is.null(ri_tracts)}
 full_join(pl, ri_tracts, by="GEOID") %>%
 ggplot(aes(fill=pop, geometry=geometry)) +
     geom_sf(size=0) +
