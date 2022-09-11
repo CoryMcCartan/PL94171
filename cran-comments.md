@@ -1,8 +1,3 @@
-## Resubmission
-
-In this resubmission, I have removed a trailing comma from the URL field in the
-DESCRIPTION.
-
 ## Test environments
 * local R installation, MacOS, R 4.2.0
 * macos-latest (on gh-actions), R 4.2.0
@@ -15,8 +10,7 @@ DESCRIPTION.
 
 0 errors | 0 warnings | 0 notes
 
-* This version addresses existing NOTEs regarding invalid HTML5 and also updates
-new package URLs.
+* This version addresses existing ERRORs from vignette building due to API failures.
 
 * 1 reverse depdendency (wru) was checked and there were no ERRORs, WARNINGs, or NOTEs.
 
