@@ -1,69 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://corymccartan.com/PL94171/404.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/articles/PL94171.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/index.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/PL94171-package.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_crosswalk.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_ex.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_geog_levels.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_get_baf.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_get_prototype.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_get_vtd.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_read.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_retally.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_select_standard.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_subset.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_tidy_shp.html</loc>
-  </url>
-  <url>
-    <loc>https://corymccartan.com/PL94171/reference/pl_url.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://corymccartan.com/PL94171/404.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/LICENSE-text.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/LICENSE.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/articles/PL94171.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/articles/index.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/authors.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/index.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/news/index.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/PL94171-package.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/index.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_crosswalk.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_ex.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_geog_levels.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_get_baf.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_get_prototype.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_get_vtd.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_read.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_retally.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_select_standard.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_subset.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_tidy_shp.html</loc></url>
+<url><loc>https://corymccartan.com/PL94171/reference/pl_url.html</loc></url>
 </urlset>
+
