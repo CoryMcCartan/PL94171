@@ -1,3 +1,6 @@
+# PL94171 1.1.3
+* Update documentation to fix NOTEs on CRAN
+
 # PL94171 1.1.0
 * Replace `tigris` with `tinytiger` for geometry downloads to reduce total package dependencies.
 * Updated URLs and updated package documentation to be HTML5 compliant.
