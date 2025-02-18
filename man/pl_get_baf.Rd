@@ -17,7 +17,7 @@ If a file exists and \code{refresh=FALSE}, will read BAF from this file.}
 \item{refresh}{if \code{TRUE}, force a re-download of the BAF data.}
 }
 \value{
-A list of \link{tibble}s, one for each available BAF geography.
+A list of data frames, one for each available BAF geography.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}

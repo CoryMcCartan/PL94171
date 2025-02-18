@@ -1,29 +1,37 @@
 # Platform
 
-|field    |value                                                                              |
-|:--------|:----------------------------------------------------------------------------------|
-|version  |R version 4.2.0 (2022-04-22)                                                       |
-|os       |macOS Monterey 12.4                                                                |
-|system   |aarch64, darwin20                                                                  |
-|ui       |X11                                                                                |
-|language |(EN)                                                                               |
-|collate  |en_US.UTF-8                                                                        |
-|ctype    |en_US.UTF-8                                                                        |
-|tz       |America/New_York                                                                   |
-|date     |2022-09-11                                                                         |
-|pandoc   |2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools//pandoc |
+|field    |value                                      |
+|:--------|:------------------------------------------|
+|version  |R version 4.4.0 (2024-04-24)               |
+|os       |macOS 15.3.1                               |
+|system   |aarch64, darwin20                          |
+|ui       |RStudio                                    |
+|language |(EN)                                       |
+|collate  |en_US.UTF-8                                |
+|ctype    |en_US.UTF-8                                |
+|tz       |America/New_York                           |
+|date     |2025-02-18                                 |
+|rstudio  |2024.09.1+394 Cranberry Hibiscus (desktop) |
+|pandoc   |NA                                         |
 
 # Dependencies
 
-|package   |old   |new    |Δ  |
-|:---------|:-----|:------|:--|
-|PL94171   |1.1.1 |1.1.2  |*  |
-|cli       |NA    |3.4.0  |*  |
-|dplyr     |NA    |1.0.10 |*  |
-|hms       |NA    |1.1.2  |*  |
-|lifecycle |NA    |1.0.2  |*  |
-|rlang     |NA    |1.0.5  |*  |
-|tinytiger |NA    |0.0.4  |*  |
+|package  |old   |new    |Δ  |
+|:--------|:-----|:------|:--|
+|PL94171  |1.1.2 |1.1.2  |   |
+|askpass  |NA    |1.2.1  |*  |
+|classInt |NA    |0.4-11 |*  |
+|cli      |NA    |3.6.4  |*  |
+|cpp11    |NA    |0.5.1  |*  |
+|crayon   |NA    |1.5.3  |*  |
+|openssl  |NA    |2.3.2  |*  |
+|rlang    |NA    |1.1.5  |*  |
 
 # Revdeps
+
+## Failed to check (1)
+
+|package |version |error |warning |note |
+|:-------|:-------|:-----|:-------|:----|
+|wru     |3.0.3   |1     |        |     |
 

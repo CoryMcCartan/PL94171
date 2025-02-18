@@ -21,7 +21,7 @@
 #' @param pl A list of PL tables, as read in by [pl_read()]
 #' @param clean_names whether to clean names
 #'
-#' @return A [tibble] with the selected and optionally renamed columns
+#' @return A data frame with the selected and optionally renamed columns
 #'
 #' @concept basic
 #' @export
@@ -101,7 +101,7 @@ pl_select_standard <- function(pl, clean_names = TRUE){
 #'
 #' @param pl input from [read_pl()]
 #'
-#' @return A [tibble] containing the joined data.
+#' @return A data frame containing the joined data.
 #'
 #' @noRd
 pl_widen <- function(pl) {

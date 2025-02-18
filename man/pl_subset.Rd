@@ -12,7 +12,7 @@ pl_subset(pl, sumlev = "750")
 \item{sumlev}{the summary level to filter to. A 3 character SUMLEV code. Default is '750' for blocks.}
 }
 \value{
-tibble
+A data frame
 }
 \description{
 This subsets a pl table to a desired summary level. Typical choices include:

@@ -13,7 +13,7 @@
 #' @param pl A list of PL tables, as read in by [pl_read()]
 #' @param sumlev the summary level to filter to. A 3 character SUMLEV code. Default is '750' for blocks.
 #'
-#' @return tibble
+#' @return A data frame
 #'
 #' @concept basic
 #' @export

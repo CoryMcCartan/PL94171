@@ -17,7 +17,7 @@
 #'   If a file exists and `refresh=FALSE`, will read BAF from this file.
 #' @param refresh if `TRUE`, force a re-download of the BAF data.
 #'
-#' @return A list of [tibble]s, one for each available BAF geography.
+#' @return A list of data frames, one for each available BAF geography.
 #'
 #' @examples
 #' pl_get_baf("RI")

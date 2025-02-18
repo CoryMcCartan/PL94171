@@ -12,7 +12,7 @@ pl_select_standard(pl, clean_names = TRUE)
 \item{clean_names}{whether to clean names}
 }
 \value{
-A \link{tibble} with the selected and optionally renamed columns
+A data frame with the selected and optionally renamed columns
 }
 \description{
 Selects the standard set of basic population groups and VAP groups. Optionally

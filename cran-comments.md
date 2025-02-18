@@ -1,8 +1,8 @@
 ## Test environments
-* local R installation, MacOS, R 4.2.0
-* macos-latest (on gh-actions), R 4.2.0
-* windows-latest (on gh-actions), R 4.2.0
-* ubuntu 20.04 (on gh-actions), R 4.2.0
+* local R installation, MacOS, R 4.4.0
+* macos-latest (on gh-actions), R 4.4.0
+* windows-latest (on gh-actions), R 4.4.0
+* ubuntu 20.04 (on gh-actions), R 4.4.0
 * ubuntu 20.04 (on gh-actions) (devel)
 * ubuntu 20.04 (on gh-actions) (old-release)
 
@@ -10,9 +10,9 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This version addresses existing ERRORs from vignette building due to API failures.
+* This version addresses existing NOTEs due to missing cross-package links in .Rd files
 
-* 1 reverse depdendency (wru) was checked and there were no ERRORs, WARNINGs, or NOTEs.
+* 2 reverse depdendencies (wru; redistverse) were checked and there were no ERRORs, WARNINGs, or NOTEs.
 
 * Examples are \donttest in many functions because they require
 moderately large files to be downloaded from the Internet, taking more than 5-10
