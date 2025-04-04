@@ -18,7 +18,8 @@ Imports:
     tinytiger,
     sf,
     withr,
-    httr
+    httr,
+    foreign
 Suggests: 
     testthat (>= 3.0.0),
     lifecycle,
