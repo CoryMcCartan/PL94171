@@ -1,7 +1,7 @@
 download_census <- function(url, path) {
     tryCatch({
-        res = httr::GET(url = url, httr::write_disk(path))
-        res$status_code == 200L
+        res = curl::curl_download(url = url, destfile = path)
+        TRUE
     }, error = function(e) {
         cat("Error:", e$message, "\n")
         FALSE
