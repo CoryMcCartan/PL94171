@@ -1,3 +1,6 @@
+# PL94171 1.2.0
+* Adds support for 1990 data in `pl_url()` and `pl_read()`.
+
 # PL94171 1.1.3
 * Update documentation to fix NOTEs on CRAN
 
