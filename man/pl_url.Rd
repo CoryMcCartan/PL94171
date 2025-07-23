@@ -9,8 +9,8 @@ pl_url(abbr, year = 2010)
 \arguments{
 \item{abbr}{The state to download the PL files for}
 
-\item{year}{The year of PL file to download. Supported years: 2000, 2010,
-2020 (after release). 2000 files are in a different format.
+\item{year}{The year of PL file to download. Supported years: 1990, 2000, 2010,
+2020. 2000 files are in a different format.
 Earlier years available on tape or CD-ROM only.}
 }
 \value{

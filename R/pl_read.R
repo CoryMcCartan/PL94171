@@ -25,7 +25,33 @@
 #' @concept basic
 #' @export
 pl_read = function(path, ...) {
-    if (length(path) > 1) {
+    if (any(stringr::str_detect(path, '.dbf'))) {     # handle 1990
+        if (length(path) == 1) {
+            if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
+                path <- paste0(tempdir(), "/", basename(path))
+                success <- download_census(path, loc_path)
+                if (!success) {
+                    message(paste0("Download did not succeed. Try again."))
+                    return(NULL)
+                }
+            }
+            out <- dplyr::as_tibble(foreign::read.dbf(path, as.is = TRUE))
+            out <- out |>
+                dplyr::mutate(
+                    GEOID = case_when(
+                        !is.na(BLCK) ~ str_c("7500000US", STATEFP, CNTY, TRACTBNA, BLCK),
+                        !is.na(BLCKGR) ~ str_c("1500000US", STATEFP, CNTY, TRACTBNA, BLCKGR),
+                        !is.na(TRACTBNA) ~ str_c("1400000US", STATEFP, CNTY, TRACTBNA),
+                        !is.na(CNTY) ~ str_c("0500000US", STATEFP, CNTY),
+                        TRUE ~ NA_character_
+                    ),
+                    .after = 'PARTREC'
+                )
+            return(out)
+        } else {
+            stop('A 1990s file was detected based on ending `.dbf`. Only one path may be provided.')
+        }
+    } else if (length(path) > 1) {
         if (all(stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)"))) {
             zip_dir = withr::local_tempdir(pattern="pl")
             for (p in path) {
@@ -102,8 +128,8 @@ read_pl = pl_read
 #' Get the URL for PL files for a particular state and year
 #'
 #' @param abbr The state to download the PL files for
-#' @param year The year of PL file to download. Supported years: 2000, 2010,
-#'   2020 (after release). 2000 files are in a different format.
+#' @param year The year of PL file to download. Supported years: 1990, 2000, 2010,
+#'   2020. 1990 and 2000 files are in a different format.
 #'   Earlier years available on tape or CD-ROM only.
 #'
 #' @return a character vector containing the URL to a ZIP containing the PL files.
@@ -125,6 +151,11 @@ pl_url = function(abbr, year=2010) {
     } else if (year == 2020) {
         url = str_glue("https://www2.census.gov/programs-surveys/decennial/2020/data/",
                        "01-Redistricting_File--PL_94-171/{name}/{tolower(abbr)}2020.pl.zip")
+    } else if (year == 1990) {
+        url <- str_glue(
+                        'https://www2.census.gov/census_1990/1990_PL94-171/',
+                        census_disk(st = abbr), '/pl9417{tolower(abbr)}.dbf'
+        )
     }
     as.character(url)
 }
