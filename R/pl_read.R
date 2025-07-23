@@ -117,13 +117,13 @@ pl_url = function(abbr, year=2010) {
     name = match_name(abbr)
     name = stringr::str_replace_all(name, " ", "_")
     if (year == 2000) {
-        url = str_glue("https://www2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/",
+        url = str_glue("ftp://ftp2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/",
                        "{name}/{tolower(abbr)}{c('00001', '00002', 'geo')}.upl.zip")
     } else if (year == 2010) {
-        url = str_glue("https://www2.census.gov/census_2010/01-Redistricting_File--PL_94-171/",
+        url = str_glue("ftp://ftp2.census.gov/census_2010/01-Redistricting_File--PL_94-171/",
                        "{name}/{tolower(abbr)}2010.pl.zip")
     } else if (year == 2020) {
-        url = str_glue("https://www2.census.gov/programs-surveys/decennial/2020/data/",
+        url = str_glue("ftp://ftp2.census.gov/programs-surveys/decennial/2020/data/",
                        "01-Redistricting_File--PL_94-171/{name}/{tolower(abbr)}2020.pl.zip")
     }
     as.character(url)
