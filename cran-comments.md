@@ -12,7 +12,7 @@
 
 * This version addresses existing NOTEs due to missing cross-package links in .Rd files
 
-* 2 reverse depdendencies (wru; redistverse) were checked and there were no ERRORs, WARNINGs, or NOTEs.
+* 2 reverse depdendencies (wru; redistverse) were checked and there were no new ERRORs, WARNINGs, or NOTEs.
 
 * Examples are \donttest in many functions because they require
 moderately large files to be downloaded from the Internet, taking more than 5-10
