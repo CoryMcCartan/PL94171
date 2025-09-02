@@ -18,7 +18,7 @@ Imports:
     dplyr (>= 1.0.0),
     tinytiger,
     sf,
-    withr
+    withr,
     foreign
 Suggests: 
     testthat (>= 3.0.0),
