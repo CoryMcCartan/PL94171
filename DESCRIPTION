@@ -20,7 +20,6 @@ Imports:
     sf,
     withr
     foreign
->>>>>>> main
 Suggests: 
     testthat (>= 3.0.0),
     lifecycle,
