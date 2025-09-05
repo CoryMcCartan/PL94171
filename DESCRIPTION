@@ -12,13 +12,13 @@ Description: Tools to process legacy format summary redistricting data files
 Depends: R (>= 4.0.0)
 Imports: 
     cli,
+    curl,
     stringr,
     readr,
     dplyr (>= 1.0.0),
     tinytiger,
     sf,
     withr,
-    httr,
     foreign
 Suggests: 
     testthat (>= 3.0.0),
