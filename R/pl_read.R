@@ -28,7 +28,7 @@ pl_read = function(path, ...) {
     if (any(stringr::str_detect(path, '.dbf'))) {     # handle 1990
         if (length(path) == 1) {
             if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
-                path <- paste0(tempdir(), "/", basename(path))
+                loc_path <- paste0(tempdir(), "/", basename(path))
                 success <- download_census(path, loc_path)
                 if (!success) {
                     message(paste0("Download did not succeed. Try again."))
