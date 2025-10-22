@@ -68,13 +68,16 @@ pl_read = function(path, ...) {
             stop("Provide a single path to the directory containing the PL files.")
         }
     } else if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
+        st_yr <- path |>
+            basename() |>
+            stringr::word(sep = stringr::fixed('.'))
         zip_path = withr::local_tempfile(pattern="pl", fileext=".zip")
         success = download_census(path, zip_path)
         if (!success) {
             message("Download did not succeed. Try again.")
             return(NULL)
         }
-        zip_dir = file.path(dirname(zip_path), "PL-unzip")
+        zip_dir = file.path(dirname(zip_path), "PL-unzip", st_yr)
         utils::unzip(zip_path, exdir=zip_dir)
         path = zip_dir
     } else if (!dir.exists(path)) { # compressed file
@@ -84,7 +87,9 @@ pl_read = function(path, ...) {
     }
 
     files = list.files(path, pattern="\\.u?pl$", ignore.case=TRUE)
-    if (length(files) == 0) stop("No P.L. 94-171 files found in the provided directory.")
+    if (length(files) == 0) {
+        stop("No P.L. 94-171 files found in the provided directory.")
+    }
     out = list()
     ftypes = c("00001", "00002", "00003", "geo")
     for (fname in files) {
