@@ -35,7 +35,7 @@ pl_read = function(path, ...) {
                     return(NULL)
                 }
             }
-            out <- dplyr::as_tibble(foreign::read.dbf(path, as.is = TRUE))
+            out <- dplyr::as_tibble(foreign::read.dbf(loc_path, as.is = TRUE))
             out <- out |>
                 dplyr::mutate(
                     GEOID = case_when(
