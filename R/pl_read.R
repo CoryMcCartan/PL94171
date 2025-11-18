@@ -30,12 +30,13 @@ pl_read = function(path, ...) {
             if (stringr::str_detect(path, "^(http://|https://|ftp://|ftps://)")) {
                 loc_path <- paste0(tempdir(), "/", basename(path))
                 success <- download_census(path, loc_path)
+                path <- loc_path
                 if (!success) {
                     message(paste0("Download did not succeed. Try again."))
                     return(NULL)
                 }
             }
-            out <- dplyr::as_tibble(foreign::read.dbf(loc_path, as.is = TRUE))
+            out <- dplyr::as_tibble(foreign::read.dbf(path, as.is = TRUE))
             out <- out |>
                 dplyr::mutate(
                     GEOID = case_when(
